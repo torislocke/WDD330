@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Tori Locke" />
+    <title>Story Writer</title>
+
+    <script>
+        function loadStory() {
+            var storyName = document.getElementById('name_input').value;
+            var storyHTML = localStorage.getItem(storyName);
+            document.getElementById('story_editor').value = storyHTML;
+        }
+
+        function saveStory() {
+            var storyName = document.getElementById('name_input').value;
+            var storyHTML = document.getElementById('story_editor').value;
+            localStorage.setItem(storyName, storyHTML);
+        }
+
+        function displayStory() {
+            var storyHTML = document.getElementById('story_editor').value;
+            document.getElementById('story_display').innerHTML = storyHTML;
+        }
+    </script>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        textarea {
+            margin-top: 10px;
+            width: 800px;
+            height: 250px;
+            background-color: lightyellow;
+        }
+
+        button {
+            padding: 5px;
+            margin-left: 7px;
+        }
+
+        footer {
+            display: flex;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+
+        footer small {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Story Editor</h1>
+        <p>Story Name: <input id="name_input" /></p>
+        <section>
+            <button onclick="loadStory()">Find and Edit it</button>
+            <button onclick="saveStory()">Save it</button>
+            <button onclick="displayStory()">Display it</button>
+        </section>
+        <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
+        <section id="story_display"></section>
+    </main>
+    <footer>
+
+        <small> Tori Locke | WDD 330 | Doing Stuff with Web Things | Section 3 "Remembering User's Info" </small>
+
+        <br /><span id="lastUpdate"></span>
+        </small>
+    </footer>
+</body>
+
+</html>
