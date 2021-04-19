@@ -52,7 +52,9 @@ a {
 	list-style-type: square;
 	padding: 10px;
 }
-
+button {
+	padding: 7px;
+}
 small,
 .text-small {
 	font-size: calc(1em / 1.2);
