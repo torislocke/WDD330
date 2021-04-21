@@ -1,4 +1,8 @@
-const projects = ['<a href="first_event.html">First Event</a>', '<a href="story_editor.html">Story Editor</a>'];
+const projects = [
+	'<a href="first_event.html">First Event</a>',
+	'<a href="story_editor.html">Story Editor</a>',
+	'<a href="notesW01.html">Notes</a>',
+];
 
 /* foreach array method
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach*/
