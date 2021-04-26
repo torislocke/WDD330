@@ -7,23 +7,17 @@
 		<meta name="author" content="Tori Locke" />
 		<meta name="description" content="Week Two notes on lectures" />
 		<link rel="stylesheet" href="../styles.css" type="text/css" media="all" />
-		<link
-			rel="stylesheet"
-			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-			crossorigin="anonymous"
-		/>
 
 		<title>Week Two Notes</title>
 		<script src="week2.js"></script>
 	</head>
-	<body class="col-md-12">
+	<body>
 		<header>
-			<h1><a href="../">Tori Locke | WDD 330 Portfolio </a> | Week-01</h1>
+			<h1><a href="../">Tori Locke | WDD 330 Portfolio </a> | Week-02</h1>
 		</header>
 		<main>
 			<section>
-				<h2>Summary Notes</h2>
+				<h1>Summary Notes</h1>
 				<ul>
 					<li>
 						Refactoring is the process of improving the code’s structure and maintainability without
@@ -60,80 +54,15 @@
 					</li>
 				</ul>
 			</section>
-
-			<div id="display-resources">
-				<p>
-					JavaScript example using
-					<a href="https://developer.mozilla.org/en/docs/Web/API/Fetch_API">fetch()</a> to retrieve a list of
-					JavaScript Training Resources.
-				</p>
-			</div>
-			<a href="#" class="btn btn-primary" id="retrieve-resources">Retrieve List</a>
-			<!-- <h2>JavaScript Reserved Words (Cannot be used to name variables, functions, etc.)</h2> -->
-			<!-- <ol>
-				<li>abstract</li>
-				<li>await</li>
-				<li>boolean</li>
-				<li>break</li>
-				<li>byte</li>
-				<li>case</li>
-				<li>catch</li>
-				<li>char</li>
-				<li>class</li>
-				<li>const</li>
-				<li>continue</li>
-				<li>debugger</li>
-				<li>default</li>
-				<li>delete</li>
-				<li>do</li>
-				<li>double</li>
-				<li>else</li>
-				<li>enum</li>
-				<li>export</li>
-				<li>extends</li>
-				<li>false</li>
-				<li>final</li>
-				<li>finally</li>
-				<li>float</li>
-				<li>for</li>
-				<li>function</li>
-				<li>goto</li>
-				<li>if</li>
-				<li>implements</li>
-				<li>import</li>
-				<li>in</li>
-				<li>instanceof</li>
-				<li>int</li>
-				<li>interface</li>
-				<li>let</li>
-				<li>long</li>
-				<li>native</li>
-				<li>new</li>
-				<li>null</li>
-				<li>package</li>
-				<li>private</li>
-				<li>protected</li>
-				<li>public</li>
-				<li>return</li>
-				<li>short</li>
-				<li>static</li>
-				<li>super</li>
-				<li>switch</li>
-				<li>synchronized</li>
-				<li>this</li>
-				<li>throw</li>
-				<li>throws</li>
-				<li>transient</li>
-				<li>true</li>
-				<li>try</li>
-				<li>typeof</li>
-				<li>var</li>
-				<li>volatile</li>
-				<li>void</li>
-				<li>while</li>
-				<li>with</li>
-				<li>yield</li>
-			</ol> -->
+			<h2 class="snug">JavaScript Reserved Words</h2>
+			<small class="snug">(Cannot be used to name variables, functions, etc.)</small>
+			<input
+				type="button"
+				class="reserved"
+				onclick="CreateTableFromJSON()"
+				value="View Reserved List from Json data"
+			/>
+			<div id="showData"></div>
 		</main>
 		<!-- <footer>
 			<small>Tori Locke | WDD 330 | Spring 2021</small>
