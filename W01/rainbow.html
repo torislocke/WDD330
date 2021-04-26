@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="author" content="Tori Locke" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rainbow Exercise - JavaScript Ninja</title>
+		<script>
+			const btn = document.getElementById('button');
+			const rainbow = ['red', 'orange', 'yellow', 'green', 'blue', 'rebeccapurple', 'violet'];
+			function change() {
+				document.body.style.background = rainbow[Math.floor(7 * Math.random())];
+			}
+			btn.addEventListener('click', change);
+		</script>
+	</head>
+	<body>
+		<button id="button">click me</button>
+		<script src="main.js"></script>
+	</body>
+</html>

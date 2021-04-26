@@ -58,6 +58,11 @@ a {
 button {
 	padding: 7px;
 }
+.reserved {
+	padding: 7px;
+	border: 2px double purple;
+	cursor: pointer;
+}
 small,
 .text-small {
 	font-size: calc(1em / 1.2);
