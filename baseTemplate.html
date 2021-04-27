@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>W02 | Team Assignment</title>
+		<script>
+			/* Defining Table for W02 team activity #1
+			 * Input: text input within form
+			 * Processing: read the contents of input text and write to output div on screen
+			 * Output: text entered into input field
+			 */
+			function outPut1() {
+				// Get the text from the text field that has the id
+				// of "input1" and store it in a variable named input1.
+				let input1 = document.getElementById('input1').value;
+
+				// Display text from input1 in "output1 Div".
+				document.getElementById('output1').innerHTML = 'You entered ' + input1;
+			}
+			/* Defining Table for W02 team activity #2
+			 * Input: text input within form
+			 * Processing: read the contents of input text and write to output div on screen
+			 * Output: text entered into input field
+			 */
+			function outPut2() {
+				// Get a number from the text field that has the id
+				// of "input2" and store it in a variable named input2.
+				let input2 = parseFloat(document.getElementById('input2').value);
+				if (isNaN(value)) {
+					alert('Please Provide the input as a number');
+					return false;
+				} else {
+					let sum = 0;
+					for (i = 1; i <= input2; i = i + 1) sum += i;
+				}
+				// Display number from input2 in "output2 Div".
+				document.getElementById('output2').innerHTML =
+					'The sum of all numbers between 1 and ' + input2 + ' is ' + sum;
+			}
+		</script>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			section {
+				width: 60vw;
+				margin: 20px auto;
+				border: 2px double blue;
+			}
+			form {
+				width: 50vw;
+				margin: 10px auto 10px auto;
+			}
+			label,
+			input {
+				display: block;
+				text-align: center;
+				margin: auto;
+			}
+			#submit {
+				margin-top: 20px;
+				padding: 10px;
+				background-color: blue;
+				color: white;
+				width: 70px;
+			}
+			legend {
+				font-size: 28px;
+			}
+			.output {
+				width: 40vw;
+				padding: 10px;
+				text-align: center;
+				margin: auto;
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<form action="" method="" id="">
+				<fieldset>
+					<legend>Team Exercise One</legend>
+					<label for="input1">Label Name</label>
+					<input type="text" name="" id="input1" />
+					<br />
+					<input onclick="outPut1()" type="sumbit" name="submit" id="submit" value="Submit" />
+				</fieldset>
+				<div class="output" id="output1"></div>
+			</form>
+		</section>
+		<section>
+			<form action="" method="" id="">
+				<fieldset>
+					<legend>Team Exercise Two</legend>
+					<label for="">Label Name</label>
+					<input type="text" name="" id="" />
+					<br />
+
+					<label for="">Label Name</label>
+					<input type="text" name="" id="" />
+					<br />
+					<input onclick="outPut2()" type="sumbit" name="submit" id="submit" value="Submit" />
+				</fieldset>
+				<div id="output2"></div>
+			</form>
+		</section>
+		<section>
+			<form action="" method="" id="">
+				<fieldset>
+					<legend>Team Exercise Three</legend>
+					<label for="">Label Name</label>
+					<input type="text" name="" id="" />
+					<br />
+					<label for="">Label Name</label>
+					<input type="text" name="" id="" />
+					<br />
+					<input type="sumbit" name="submit" id="submit" value="Submit" />
+				</fieldset>
+				<div id="output3"></div>
+			</form>
+		</section>
+	</body>
+</html>

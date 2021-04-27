@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>W02 | Team Assignment</title>
+		<script>
+			/* Defining Table for W02 team activity #1
+			      Input: get text input within form
+			      Processing: read the contents of input text and write to output div on screen
+			      Output: text entered retrieved from user input field
+			 */
+			function outPut1() {
+				// Get the text from the text field that has the id
+				// of "input1" and store it in a variable with same name.
+				let input1 = document.querySelector('#input1').value;
+
+				// Display text from input1 in "output1 Div".
+				document.querySelector('#output1').innerHTML = 'You entered ' + input1;
+			}
+			/* Defining Table for W02 team activity #2
+			      Input: retrieve user input of number
+			      Processing: read the contents of input, verify a number and write to output div on screen
+			      Output: number retrieved from input field
+			 */
+			function sumMe() {
+				// Get the number from the text field that has the id
+				// of "userNumber" and store it in a variable with same name.
+				let userNumber = parseFloat(document.querySelector('#userNumber').value);
+				// check to see if input is a number
+				if (isNaN(userNumber)) {
+					// if not a number display an error message in red
+					document.querySelector('#numberOutput').classList.add('red');
+					document.querySelector('#numberOutput').innerHTML = 'Please enter a number';
+					return false;
+				} else {
+					let sum = 0;
+					for (let start = 1; start <= userNumber; start++) {
+						sum += start;
+					}
+					document.querySelector('#numberOutput').innerHTML =
+						'The sum of all numbers starting with 1 and ending with ' + userNumber + ' is ' + sum;
+				}
+			}
+			/* Defining Table for W02 team activity #3
+			     Input: retrieve user input of two numbers
+			     Processing: verify input are numbers, add numbers and display sum on screen
+			     Output: display both numbers entered and the sum of the two numbers.
+			 */
+			function addMe() {
+				/* Get user input of two numbers that have the id(s)				/ of "firstNumber" and "secondNumber" and store in variables with matching names. */
+				let firstNumber = parseFloat(document.querySelector('#firstNumber').value);
+				let secondNumber = parseFloat(document.querySelector('#secondNumber').value);
+				// verify inputs are numbers and display error message if not.
+				if (isNaN(firstNumber && secondNumber)) {
+					document.querySelector('#addOutput').classList.add('red');
+					document.querySelector('#addOutput').innerHTML = 'Please enter a number';
+					return false;
+				} else {
+					let sum = firstNumber + secondNumber;
+					document.querySelector('#addOutput').innerHTML =
+						'The sum of ' + firstNumber + ' + ' + secondNumber + ' is ' + sum;
+				}
+			}
+			/* ------------ Defining Table for W02 team activity #3 ---------------
+			     Input: retrieve user input of two numbers & math operator
+			     Processing: verify input are numbers, use math operator selected to add, subtract, multiply or divide two numbers and display results
+			     Output: display both numbers entered, math operator and results.
+			 */
+
+			function mathMe() {
+				//retrieve user input
+				console.log(mathMe(value));
+
+				let firstNum = parseFloat(document.querySelector('#mathFirstNumber').value);
+				let secondNum = parseFloat(document.querySelector('#mathSecondNumber').value);
+				let result = 0;
+				// verify inputs are numbers and display error message if not.
+				if (isNaN(firstNum && secondNum)) {
+					document.querySelector('#mathOutput').classList.add('red');
+					document.querySelector('#mathOutput').innerHTML = 'Please enter a number';
+					return false;
+				} else {
+					// using switch method to go through math operators for results
+					switch (value) {
+						case 'add':
+							result = firstNum + secondNum;
+							break;
+						case 'subtract':
+							result = firstNum - secondNum;
+							break;
+						case 'multiply':
+							result = firstNum * secondNum;
+							break;
+						case 'divide':
+							result = firstNum / secondNum;
+							break;
+						default:
+							result = "I'm confused";
+							break;
+					}
+					document.querySelector('#mathOutput').innerHTML =
+						'The result of ' + firstNum + value + secondNum + ' is ' + result;
+					console.log('This is the first version ' + result);
+				}
+				document.querySelector('#mathOutput').innerHTML =
+					'The result of ' + firstNum + value + secondNum + ' is ' + result;
+			}
+		</script>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			section {
+				width: 60vw;
+				margin: 20px auto;
+				border: 2px double blue;
+			}
+			form {
+				width: 50vw;
+				margin: 10px auto 10px auto;
+			}
+			label,
+			input {
+				display: block;
+				text-align: center;
+				margin: auto;
+				padding: 5px;
+			}
+			input {
+				border: 1px solid grey;
+			}
+			#submit {
+				margin-top: 10px;
+				background-color: grey;
+				color: white;
+				width: 70px;
+				cursor: pointer;
+				transition: 0.5s;
+				border: none;
+			}
+			#submit:hover {
+				transform: scale(1.1);
+				box-shadow: 5px 5px 5px black;
+			}
+			legend {
+				font-size: 28px;
+			}
+			.output {
+				width: 40vw;
+				padding: 10px;
+				text-align: center;
+				margin: auto;
+				margin-top: 10px;
+			}
+			.red {
+				color: red;
+			}
+			.inline {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+			}
+			.inline button {
+				padding: 5px 10px;
+				margin: 5px;
+				background-color: grey;
+				color: white;
+				cursor: pointer;
+				transition: 0.5s;
+				border: none;
+			}
+			.inline button:hover {
+				transform: scale(1.1);
+				box-shadow: 5px 5px 5px black;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<form action="" method="" id="">
+				<fieldset>
+					<legend>Team Exercise One</legend>
+					<label for="input1">Enter somthing to print on the screen.</label>
+					<input type="text" name="" id="input1" />
+					<br />
+					<input onclick="outPut1()" type="sumbit" name="submit" id="submit" value="Submit" />
+				</fieldset>
+				<div class="output" id="output1"></div>
+			</form>
+		</section>
+		<section>
+			<form action="" method="" id="">
+				<fieldset>
+					<legend>Team Exercise Two</legend>
+					<label for="userNumber">Enter a Number</label>
+					<input type="text" name="" id="userNumber" />
+					<br />
+					<input onclick="sumMe()" type="sumbit" name="submit" id="submit" value="Submit" />
+				</fieldset>
+				<div class="output" id="numberOutput"></div>
+			</form>
+		</section>
+		<section>
+			<form action="" method="" id="">
+				<fieldset>
+					<legend>Team Exercise Three</legend>
+					<label for="firstNumber">Enter your first number.</label>
+					<input type="text" name="firstNumber" id="firstNumber" />
+					<br />
+					<label for="secondNumber">Enter your second number to add to the first.</label>
+					<input type="text" name="secondNumber" id="secondNumber" />
+					<br />
+					<input onclick="addMe()" type="sumbit" name="submit" id="submit" value="Submit" />
+				</fieldset>
+				<div id="addOutput"></div>
+			</form>
+		</section>
+		<section>
+			<form action="" method="" id="">
+				<fieldset>
+					<legend>Team Stretch Exercise</legend>
+					<label for="mathFirstNumber">Enter your first number.</label>
+					<input type="text" name="mathFirstNumber" id="mathFirstNumber" />
+					<br />
+					<label for="mathSecondNumber">Enter your second number.</label>
+					<input type="text" name="mathSecondNumber" id="mathSecondNumber" />
+					<br />
+					<label for="mathOperator"
+						>Would you like to add, subtract, multiply or divide the two numbers?</label
+					>
+					<!-- The onclick attribute determines what is run when a click occurs and causes a block of JavaScript code to run.  -->
+					<div class="inline">
+						<button class="operator" value="add" onclick="mathMe('add')">+</button>
+						<button class="operator" value="subtract" onclick="mathMe('subtract')">-</button>
+						<button class="operator" value="multiply" onclick="mathMe('multiply')">*</button>
+						<button class="operator" value="divide" onclick="mathMe('divide')">/</button>
+					</div>
+				</fieldset>
+				<div id="mathOutput"></div>
+			</form>
+		</section>
+	</body>
+</html>
