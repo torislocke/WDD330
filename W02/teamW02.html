@@ -5,6 +5,101 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>W02 | Team Assignment</title>
+		<script>
+			// best practice to set use strict
+			'use strict';
+			/*  --------- Defining Table for W02 team activity #1 -------------
+			      Input: get text input within form
+			      Processing: read the contents of input text and write to output div on screen
+			      Output: text entered retrieved from user input field
+			 */
+			// Hoisted code example by using Function Declaration
+			function outPut1() {
+				// Get the text from the text field that has the id
+				// of "input1" and store it in a variable with same name.
+				let input1 = document.querySelector('#input1').value;
+
+				// Display text from input1 in "output1 Div".
+				document.querySelector('#output1').innerHTML = 'You entered ' + input1;
+			}
+			/* ----------  Defining Table for W02 team activity #2 -------------
+			      Input: retrieve user input of number
+			      Processing: read the contents of input, verify a number and write to output div on screen
+			      Output: number retrieved from input field
+			 */
+			// ---- Example of function expression (best practice)
+			const sumMe = function () {
+				// Get the number from the text field that has the id of "userNumber" and store it in a variable with same name.
+				let userNumber = parseFloat(document.querySelector('#userNumber').value);
+				// check to see if input is a number
+				if (isNaN(userNumber)) {
+					// if not a number display an error message in red
+					document.querySelector('#numberOutput').classList.add('red');
+					document.querySelector('#numberOutput').innerHTML = 'Please enter a number';
+					return false;
+				} else {
+					let sum = 0;
+					// avoid use of unary increments for easier code readability
+					// start +=1 vs. start++
+					for (let start = 1; start <= userNumber; start += 1) {
+						sum += start;
+					}
+					document.querySelector('#numberOutput').classList.remove('red');
+					document.querySelector('#numberOutput').innerHTML =
+						'The sum of all numbers starting with 1 and ending with ' + userNumber + ' is ' + sum;
+				}
+			};
+			/* ---------- Defining Table for W02 team activity #3 ----------------
+			     Input: retrieve user input of two numbers
+			     Processing: verify input are numbers, add numbers and display sum on screen
+			     Output: display both numbers entered and the sum of the two numbers.
+			 */
+
+			// Example of function expression with arrow syntax
+			const addMe = (value) => {
+				/* Get user input of two numbers that have the id(s) of "firstNumber" and "secondNumber" and store in variables with matching names. */
+				let firstNumber = parseFloat(document.querySelector('#firstNumber').value);
+				let secondNumber = parseFloat(document.querySelector('#secondNumber').value);
+				// verify inputs are numbers and display error message if not.
+				if (isNaN(firstNumber && secondNumber)) {
+					document.querySelector('#addOutput').classList.add('red');
+					document.querySelector('#addOutput').innerHTML = 'Please enter a number';
+					return false;
+				} else {
+					let sum = firstNumber + secondNumber;
+					document.querySelector('#numberOutput').classList.remove('red');
+					document.querySelector('#addOutput').innerHTML =
+						'The sum of ' + firstNumber + ' + ' + secondNumber + ' is ' + sum;
+				}
+			};
+			/* ------ Defining Table for W02 team Stretch activity ------------
+			     Input: retrieve user input of two numbers & math operator
+			     Processing: verify input are numbers, use math operator selected to add, subtract, multiply or divide two numbers and display results
+			     Output: display both numbers entered, math operator and results.
+			 */
+
+			// function declaration
+			function addi(firstNumber, secondNumber) {
+				return firstNumber + secondNumber;
+			}
+			// function expression
+			const sub = function (firstNumber, secondNumber) {
+				return firstNumber - secondNumber;
+			};
+			// arrow function
+			const mult = (firstNumber, secondNumber) => firstNumber * secondNumber;
+			// arrow function
+			const divi = (firstNumber, secondNumber) => firstNumber / secondNumber;
+
+			const updateTotal = (total) => {
+				document.getElementById('mathMeOutput').innerHTML = 'Total: ' + total;
+			}
+
+			function teamActivity(operation) {
+				let firstNumber = parseFloat(document.querySelector('#firstNumber').value);
+				let secondNumber = parseFloat(document.querySelector('#secondNumber').value);
+			}
+		</script>
 
 		<style>
 			body {
@@ -120,123 +215,22 @@
 			<form>
 				<fieldset>
 					<legend>Team Stretch Exercise</legend>
-					<input id="stretchNumber1" placeholder="enter a number" type="number" />
-					<input id="stretchNumber2" placeholder="enter a number" type="number" />
-					<!-- The onclick attribute determines what is run when a click occurs and causes a block of JavaScript code to run.  -->
+					<label for="firstNumber">Enter your first number.</label>
+					<input type="text" name="firstNumber" id="firstNumber" />
+					<br />
+					<label for="secondNumber">Enter your second number to add to the first.</label>
+					<input type="text" name="secondNumber" id="secondNumber" />
+					<br />
+
 					<div class="inline">
-						<button class="operator" id="stretchAdd" onclick="performOperation(add2)">+</button>
-						<button class="operator" id="stretchSub" onclick="performOperation(sub2)">-</button>
-						<button class="operator" id="stretchMult" onclick="performOperation(mult2)">*</button>
-						<button class="operator" id="stretchAdd" onclick="performOperation(divide2)">/</button>
+						<button class="operator" id="stretchAdd" onclick="mathMe(addi)">+</button>
+						<button class="operator" id="stretchSub" onclick="mathMe(sub)">-</button>
+						<button class="operator" id="stretchMult" onclick="mathMe(mult)">*</button>
+						<button class="operator" id="stretchAdd" onclick="mathMe(divi)">/</button>
 					</div>
 				</fieldset>
-				<div class="output" id="stretchOutput"></div>
+				<div class="output" id="mathMeOutput"></div>
 			</form>
 		</section>
-		<script>
-			// best practice to set use strict
-			'use strict';
-			/*  --------- Defining Table for W02 team activity #1 -------------
-			      Input: get text input within form
-			      Processing: read the contents of input text and write to output div on screen
-			      Output: text entered retrieved from user input field
-			 */
-			// Hoisted code example by using Function Declaration
-			function outPut1() {
-				// Get the text from the text field that has the id
-				// of "input1" and store it in a variable with same name.
-				let input1 = document.querySelector('#input1').value;
-
-				// Display text from input1 in "output1 Div".
-				document.querySelector('#output1').innerHTML = 'You entered ' + input1;
-			}
-			/* ----------  Defining Table for W02 team activity #2 -------------
-			      Input: retrieve user input of number
-			      Processing: read the contents of input, verify a number and write to output div on screen
-			      Output: number retrieved from input field
-			 */
-			// ---- Example of function expression (best practice)
-			const sumMe = function () {
-				// Get the number from the text field that has the id of "userNumber" and store it in a variable with same name.
-				let userNumber = parseFloat(document.querySelector('#userNumber').value);
-				// check to see if input is a number
-				if (isNaN(userNumber)) {
-					// if not a number display an error message in red
-					document.querySelector('#numberOutput').classList.add('red');
-					document.querySelector('#numberOutput').innerHTML = 'Please enter a number';
-					return false;
-				} else {
-					let sum = 0;
-					// avoid use of unary increments for easier code readability
-					// start +=1 vs. start++
-					for (let start = 1; start <= userNumber; start += 1) {
-						sum += start;
-					}
-					document.querySelector('#numberOutput').classList.remove('red');
-					document.querySelector('#numberOutput').innerHTML =
-						'The sum of all numbers starting with 1 and ending with ' + userNumber + ' is ' + sum;
-				}
-			};
-			/* ---------- Defining Table for W02 team activity #3 ----------------
-			     Input: retrieve user input of two numbers
-			     Processing: verify input are numbers, add numbers and display sum on screen
-			     Output: display both numbers entered and the sum of the two numbers.
-			 */
-
-			// Example of function expression with arrow syntax
-			const addMe = (value) => {
-				/* Get user input of two numbers that have the id(s) of "firstNumber" and "secondNumber" and store in variables with matching names. */
-				let firstNumber = parseFloat(document.querySelector('#firstNumber').value);
-				let secondNumber = parseFloat(document.querySelector('#secondNumber').value);
-				// verify inputs are numbers and display error message if not.
-				if (isNaN(firstNumber && secondNumber)) {
-					document.querySelector('#addOutput').classList.add('red');
-					document.querySelector('#addOutput').innerHTML = 'Please enter a number';
-					return false;
-				} else {
-					let sum = firstNumber + secondNumber;
-					document.querySelector('#numberOutput').classList.remove('red');
-					document.querySelector('#addOutput').innerHTML =
-						'The sum of ' + firstNumber + ' + ' + secondNumber + ' is ' + sum;
-				}
-			};
-			/* ------ Defining Table for W02 team Stretch activity ------------
-			     Input: retrieve user input of two numbers & math operator
-			     Processing: verify input are numbers, use math operator selected to add, subtract, multiply or divide two numbers and display results
-			     Output: display both numbers entered, math operator and results.
-			 */
-
-			//retrieve user input
-			function getNum(numId) {
-				const number = document.getElementById(numId).value;
-				const numberFloat = parseFloat(number);
-				if (numberFloat !== NaN) {
-					return numberFloat;
-				} else return 0;
-			}
-			function updateTotal(value) {
-				const outputElement = document.getElementById('stretchOutput');
-				outputElement.innerHTML = 'Total: ' + value;
-			}
-			// function declaration
-			function add2(num1, num2) {
-				return num1 + num2;
-			}
-			// function expression
-			const sub2 = function (num1, num2) {
-				return num1 - num2;
-			};
-			// arrow function
-			const mult2 = (num1, num2) => num1 * num2;
-			// arrow function
-			const divide2 = (num1, num2) => num1 / num2;
-
-			// example of using a callback to pull it all together
-			function performOperation(operation) {
-				// the argument 'operation' is a function...so when we are ready we can call that function in our code below
-				const total = operation(getNum('stretchNumber1'), getNum('stretchNumber2'));
-				updateTotal(total);
-			}
-		</script>
 	</body>
 </html>

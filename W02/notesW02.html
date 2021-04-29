@@ -6,8 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="author" content="Tori Locke" />
 		<meta name="description" content="Week Two notes on lectures" />
-		<link rel="stylesheet" href="../styles.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="week2.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="../normalize.css" />
+		<link rel="stylesheet" href="../styles.css" media="all" />
+		<link rel="stylesheet" href="week2.css" />
 
 		<title>Week Two Notes</title>
 		<script src="week2.js" defer></script>
@@ -57,12 +58,7 @@
 			</section>
 			<h2 class="snug">JavaScript Reserved Words</h2>
 			<small class="snug">(Cannot be used to name variables, functions, etc.)</small>
-			<input
-				type="button"
-				class="reserved"
-				onclick="CreateTableFromJSON()"
-				value="View Reserved List from Json data"
-			/>
+			<input type="button" class="reserved" onclick="CreateTableFromJSON()" value="View Reserved List" />
 			<div id="showData"></div>
 		</main>
 		<!-- <footer>

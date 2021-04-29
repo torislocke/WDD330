@@ -29,7 +29,9 @@ body {
 	--h1: calc(var(--h2) * var(--type-scale));
 }
 /* font scale factor */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
 	font-family: serif;
 }
 h1 {
@@ -69,6 +71,8 @@ small,
 header {
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	height: 5em;
 	margin: 0;
 	padding: 0;
 	background-color: var(--darkGrey);

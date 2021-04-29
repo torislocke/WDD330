@@ -6,6 +6,8 @@
 	padding: 10px;
 	border: 2px double rgb(78, 139, 196);
 	cursor: pointer;
+	margin-bottom: 10px;
+	height: 40px;
 }
 
 table,
@@ -26,4 +28,8 @@ tr td a {
 
 .snug {
 	margin: 0 0 0 15px;
+}
+
+.showData {
+	margin-bottom: 10px;
 }
