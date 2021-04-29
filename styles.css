@@ -4,11 +4,14 @@ html {
 *,
 *:before,
 *:after {
+	margin: 0;
+	padding: 0;
 	box-sizing: inherit;
 }
 body {
 	margin: 0;
 	padding: 0;
+	line-height: 1.5em;
 	font-family: sans-serif;
 	background-color: var(--background-body);
 }
@@ -26,20 +29,20 @@ body {
 	--h1: calc(var(--h2) * var(--type-scale));
 }
 /* font scale factor */
+h1, h2, h3 {
+	font-family: serif;
+}
 h1 {
 	font-size: var(--h1);
-	font-family: serif;
 	text-align: center;
 }
 h2 {
 	/* font-size: calc(1em * 1.2 * 1.2 * 1.2 * 1.2); */
 	font-size: var(--h2);
-	font-family: serif;
 }
 h3 {
 	font-size: var(--h3);
 	/* font-size: calc(1em * 1.2 * 1.2 * 1.2); */
-	font-family: serif;
 }
 
 p {
@@ -57,33 +60,6 @@ a {
 }
 button {
 	padding: 7px;
-}
-.snug {
-	margin: 0 0 0 15px;
-}
-.reserved {
-	display: block;
-	background: var(--blue);
-	color: var(--white-text);
-	margin: 10px auto 10px auto;
-	padding: 10px;
-	border: 2px double rgb(78, 139, 196);
-	cursor: pointer;
-}
-table,
-th,
-td {
-	border: 1px solid black;
-}
-table {
-	margin: auto;
-	border-collapse: collapse;
-}
-td {
-	padding: 5px;
-}
-tr td a {
-	color: blue;
 }
 
 small,

@@ -1,0 +1,29 @@
+.reserved {
+	display: block;
+	background: var(--blue);
+	color: var(--white-text);
+	margin: 10px auto 10px auto;
+	padding: 10px;
+	border: 2px double rgb(78, 139, 196);
+	cursor: pointer;
+}
+
+table,
+th,
+td {
+	border: 1px solid black;
+}
+table {
+	margin: auto;
+	border-collapse: collapse;
+}
+td {
+	padding: 5px;
+}
+tr td a {
+	color: blue;
+}
+
+.snug {
+	margin: 0 0 0 15px;
+}

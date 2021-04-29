@@ -346,9 +346,9 @@ function CreateTableFromJSON() {
 		},
 	];
 
-	var col = [];
-	for (var i = 0; i < reservedList.length; i++) {
-		for (var key in reservedList[i]) {
+	const col = [];
+	for (let i = 0; i < reservedList.length; i++) {
+		for (let key in reservedList[i]) {
 			if (col.indexOf(key) === -1) {
 				col.push(key);
 			}
@@ -360,20 +360,20 @@ function CreateTableFromJSON() {
 
 	// CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
 
-	var tr = table.insertRow(-1); // TABLE ROW.
+	let tr = table.insertRow(-1); // TABLE ROW.
 
-	for (var i = 0; i < col.length; i++) {
-		var th = document.createElement('th'); // TABLE HEADER.
+	for (let i = 0; i < col.length; i++) {
+		let th = document.createElement('th'); // TABLE HEADER.
 		th.innerHTML = col[i];
 		tr.appendChild(th);
 	}
 
 	// ADD JSON DATA TO THE TABLE AS ROWS.
-	for (var i = 0; i < reservedList.length; i++) {
+	for (let i = 0; i < reservedList.length; i++) {
 		tr = table.insertRow(-1);
 
-		for (var j = 0; j < col.length; j++) {
-			var tabCell = tr.insertCell(-1);
+		for (let j = 0; j < col.length; j++) {
+			let tabCell = tr.insertCell(-1);
 			tabCell.innerHTML = reservedList[i][col[j]];
 		}
 	}
