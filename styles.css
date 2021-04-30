@@ -94,7 +94,25 @@ footer {
 	background-color: var(--darkGrey);
 	color: var(--white-text);
 }
-
+.mainContent {
+	width: 80vw;
+	margin: auto;
+	padding: 15px;
+}
+.mainContent h2 {
+	text-align: center;
+}
+a[href*='http'] {
+	color: blue;
+	text-decoration: underline;
+}
+a[href*='http']::after {
+	content: '';
+	background: url(/images/externalLink.svg);
+	margin-right: 34px;
+	background-repeat: no-repeat;
+	padding-right: 14px;
+}
 @media (min-width: 600px) {
 	:root {
 		--type-scale: 1.33;
