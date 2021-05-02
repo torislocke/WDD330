@@ -3,9 +3,18 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Array Cardio 💪</title>
+		<link rel="stylesheet" href="../styles.css" />
+
 	</head>
 	<body>
-		<p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+		<header>
+			<h1><a href="../">Tori Locke | WDD 330 Portfolio </a> | Week-03</h1>
+		</header>
+		<main>
+			<p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+			<div class="test2"></div>
+			<div class="test"></div>
+		</main>
 		<script>
 			// Get your shorts on - this is an array workout!
 			// ## Array Cardio Day 1
@@ -79,6 +88,7 @@
 					return true; // holds the list
 				}
 			});
+
 			console.log('The below is the function declaration version');
 			console.table(bornIn);
 			// -------- as an arrow function
@@ -105,11 +115,17 @@
 			const fullNames = inventors.map((inventor) => inventor.first + ' ' + inventor.last);
 			console.log('Combination of first and last through concatenation');
 			console.log(fullNames);
+			// test 2 to output to the html page
+			document.querySelector('div.test2').innerHTML = fullNames;
+			// end of test
 
 			// template literal version
 			const templateLiteralfullNames = inventors.map((inventor) => `${inventor.first}${inventor.last}`);
 			console.log('Combination of first and last through template literal');
 			console.log(templateLiteralfullNames);
+			// test to output to the html page
+			document.querySelector('div.test').innerHTML = templateLiteralfullNames;
+			// end of test
 
 			// Array.prototype.sort()
 			// 3. Sort the inventors by birthdate, oldest to youngest
