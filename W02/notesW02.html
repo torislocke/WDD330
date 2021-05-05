@@ -13,56 +13,65 @@
 		<title>Week Two Notes</title>
 		<script src="week2.js" defer></script>
 	</head>
+
 	<body>
-		<header>
-			<h1><a href="../">Tori Locke | WDD 330 Portfolio </a> | Week-02</h1>
-		</header>
-		<main>
-			<section class="notes">
-				<h1>Summary Notes</h1>
-				<ul>
-					<li>
-						Refactoring is the process of improving the code’s structure and maintainability without
-						changing its behavior.
-					</li>
-					<li>Any variable declared outside of a block is said to have global scope.</li>
-					<li>
-						Constant and variable names are case sensitive, so ANSWER is different to Answer and answer.
-					</li>
-					<li>
-						It’s considered best practice to write each statement on a new line, terminated by a semi-colon;
-					</li>
-					<li>A block is a series of statements that are collected together inside curly braces: {}</li>
-					<li>
-						TypeScriptis an open source superset of JavaScript that is maintained by Microsoft. It provides
-						the option to specify the type of variables explicitly when they are declared, effectively
-						making it a strongly typed version of JavaScript. It also adds some extra features and is
-						designed to be make building large-scale applications easier in JavaScript. Programs are written
-						in TypeScript and then transpiled into JavaScript.
-					</li>
-					<li>
-						Strongly typed languages such as Java or Swift require the type of variables to be specified
-						when they are declared. Trying to use the wrong data-type will cause an error.
-					</li>
-					<li>
-						JavaScript is known as a weakly typed or loosely typed language. This means that you don't need
-						to explicitly specify what data-type a variable is when you declare it. This can lead to
-						unexpected behavior and hard to find bugs in code, particularly when type-coercion takes place
-						in the background.
-					</li>
-					<li>
-						When naming constants and variables, give them sensible names that describe what the variable
-						represents
-					</li>
-				</ul>
-			</section>
-			<h2 class="snug">JavaScript Reserved Words</h2>
-			<small class="snug">(Cannot be used to name variables, functions, etc.)</small>
-			<input type="button" class="reserved" onclick="CreateTableFromJSON()" value="View Reserved List" />
-			<div id="showData"></div>
-		</main>
-		<!-- <footer>
-			<small>Tori Locke | WDD 330 | Spring 2021</small>
-		</footer> -->
+		<div class="page-container">
+			<div class="content-wrapper">
+				<header>
+					<h1><a href="../">Tori Locke | WDD 330 Portfolio | Week-02</a></h1>
+				</header>
+				<main>
+					<section class="notes">
+						<h1>Summary Notes</h1>
+						<ul>
+							<li>
+								Refactoring is the process of improving the code’s structure and maintainability without
+								changing its behavior.
+							</li>
+							<li>Any variable declared outside of a block is said to have global scope.</li>
+							<li>
+								Constant and variable names are case sensitive, so ANSWER is different to Answer and
+								answer.
+							</li>
+							<li>
+								It’s considered best practice to write each statement on a new line, terminated by a
+								semi-colon;
+							</li>
+							<li>
+								A block is a series of statements that are collected together inside curly braces: {}
+							</li>
+							<li>
+								TypeScriptis an open source superset of JavaScript that is maintained by Microsoft. It
+								provides the option to specify the type of variables explicitly when they are declared,
+								effectively making it a strongly typed version of JavaScript. It also adds some extra
+								features and is designed to be make building large-scale applications easier in
+								JavaScript. Programs are written in TypeScript and then transpiled into JavaScript.
+							</li>
+							<li>
+								Strongly typed languages such as Java or Swift require the type of variables to be
+								specified when they are declared. Trying to use the wrong data-type will cause an error.
+							</li>
+							<li>
+								JavaScript is known as a weakly typed or loosely typed language. This means that you
+								don't need to explicitly specify what data-type a variable is when you declare it. This
+								can lead to unexpected behavior and hard to find bugs in code, particularly when
+								type-coercion takes place in the background.
+							</li>
+							<li>
+								When naming constants and variables, give them sensible names that describe what the
+								variable represents
+							</li>
+						</ul>
+					</section>
+					<h2 class="snug">JavaScript Reserved Words</h2>
+					<small class="snug center">(Cannot be used to name variables, functions, etc.)</small>
+					<input type="button" class="reserved" onclick="CreateTableFromJSON()" value="View Reserved List" />
+					<div id="showData"></div>
+				</main>
+			</div>
+			<footer>
+				<small>Tori Locke | WDD 330 | Spring 2021</small>
+			</footer>
+		</div>
 	</body>
 </html>

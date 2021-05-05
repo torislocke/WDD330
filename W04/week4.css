@@ -1,0 +1,46 @@
+* {
+	box-sizing: border-box;
+}
+#heroForm {
+	background-color: rgb(61, 61, 109);
+	color: rgb(252, 245, 245);
+	border: 3px double rgb(156, 17, 17);
+}
+input[type='text'],
+input[type='password'],
+input[type='number'],
+select,
+textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
+}
+button {
+	padding: 7px;
+	background-color: rgb(124, 115, 115);
+	color: rgb(255, 255, 255);
+	border-radius: 5px;
+	transition: 0.3s ease-in;
+	margin: 10px;
+}
+button:hover {
+	box-shadow: 5px 5px 5px rgb(49, 42, 42);
+	transform: scale(1.1);
+}
+fieldset {
+	margin: 10px;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2px;
+}
+.row {
+	margin: 10px;
+}
+@media screen and (min-width: 840px) {
+	fieldset {
+		grid-template-columns: repeat(6, 1fr);
+		gap: 4px;
+	}
+}

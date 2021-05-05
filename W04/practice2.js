@@ -1,7 +1,7 @@
 // ------------ hero html JavaScript -----------------
 
 // assign form to variable named form
-const form = document.forms['hero'];
+const form = document.forms['heroForm'];
 
 // listen for the event of form being submitted and trigger makeHero function
 form.addEventListener('submit', makeHero, false);

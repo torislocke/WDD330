@@ -4,8 +4,8 @@
 const projects = [
 	'<a href="objectMethods.html">Objects</a>',
 	'<a href="notesW03.html">Week Three Notes</a>',
-	'<a href="teamActivityPartOne.html">Team Activity Part One (Web Bos)</a>',
-	'<a href="teamActivityPartTwo.html">Team Activity Part Two (Web Bos)</a>',
+	'<a href="teamActivityPartOne.html">Team Activity Part One (Wes Bos)</a>',
+	'<a href="teamActivityPartTwo.html">Team Activity Part Two (Wes Bos)</a>',
 	'<a href="./practice/digitalClock.html">Wes Bos Digital Clock</a>',
 ];
 

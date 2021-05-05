@@ -2,6 +2,7 @@
 
 const dice = {
 	sides: 6,
+	// roll() method inside dice object
 	roll() {
 		return Math.floor(this.sides * Math.random()) + 1;
 	},

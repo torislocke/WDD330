@@ -27,7 +27,12 @@ tr td a {
 }
 
 .snug {
-	margin: 0 0 0 15px;
+	margin: 0 auto 0 15px;
+}
+.center {
+	display: block;
+	margin: auto;
+	text-align: center;
 }
 
 .showData {
