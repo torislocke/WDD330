@@ -2,6 +2,8 @@
 	box-sizing: border-box;
 }
 #heroForm {
+	width: 90vw;
+	margin: auto;
 	background-color: rgb(61, 61, 109);
 	color: rgb(252, 245, 245);
 	border: 3px double rgb(156, 17, 17);

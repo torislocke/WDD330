@@ -4,7 +4,6 @@
 		<meta charset="UTF-8" />
 		<title>Array Cardio Part One 💪</title>
 		<link rel="stylesheet" href="../styles.css" />
-
 	</head>
 	<body>
 		<header>
@@ -12,8 +11,11 @@
 		</header>
 		<main>
 			<p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
-			<div class="test2"></div>
+			<p>Combination of first and last displayed is usng a template literal</p>
 			<div class="test"></div>
+
+			<p>Combination of first and last through concatenation</p>
+			<div class="test2"></div>
 		</main>
 		<script>
 			// Get your shorts on - this is an array workout!
@@ -100,11 +102,11 @@
 			console.log('The below is the arrow version');
 			console.table(arrowBornIn);
 
-			// arrow version all in one line
+			// console log bother versions
 			console.log('The below is the function declaration version');
 			console.table(bornIn);
 
-			// as an arrow function
+			// as an arrow function in one line removing if and return
 			const arrowBornInOneLine = inventors.filter((inventor) => inventor.year >= 1500 && inventor.year < 1600);
 			console.log('The below is the arrow version in one line');
 			console.table(arrowBornInOneLine);
@@ -120,7 +122,7 @@
 			// end of test
 
 			// template literal version
-			const templateLiteralfullNames = inventors.map((inventor) => `${inventor.first}${inventor.last}`);
+			const templateLiteralfullNames = inventors.map((inventor) => `${inventor.first} ${inventor.last}`);
 			console.log('Combination of first and last through template literal');
 			console.log(templateLiteralfullNames);
 			// test to output to the html page
