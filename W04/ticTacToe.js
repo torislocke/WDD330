@@ -1,5 +1,5 @@
 const X_PLAYER = 'x';
-const CIRCLE_PLAYER = 'circle';
+const O_PLAYER = 'circle';
 const restartButton = document.getElementById('restartButton');
 
 restartButton.addEventListener('click', startGame);
@@ -34,7 +34,7 @@ function startGame() {
 	circleTurn = false;
 	cellElements.forEach((cell) => {
 		cell.classList.remove(X_PLAYER);
-		cell.classList.remove(CIRCLE_PLAYER);
+		cell.classList.remove(O_PLAYER);
 		cell.removeEventListener('click', handleClick);
 		cell.addEventListener('click', handleClick, {
 			once: true,
@@ -46,7 +46,7 @@ function startGame() {
 
 function handleClick(e) {
 	const cell = e.target;
-	const currentClass = circleTurn ? CIRCLE_PLAYER : X_PLAYER;
+	const currentClass = circleTurn ? O_PLAYER : X_PLAYER;
 	placeMark(cell, currentClass);
 	// continue to check if a x or o has won
 	if (checkWin(currentClass)) {
@@ -73,7 +73,7 @@ function endGame(draw) {
 
 function isDraw() {
 	return [...cellElements].every((cell) => {
-		return cell.classList.contains(X_PLAYER) || cell.classList.contains(CIRCLE_PLAYER);
+		return cell.classList.contains(X_PLAYER) || cell.classList.contains(O_PLAYER);
 	});
 }
 
@@ -90,9 +90,9 @@ function swapTurns() {
 // create the hover state for the board
 function setBoardHoverClass() {
 	board.classList.remove(X_PLAYER);
-	board.classList.remove(CIRCLE_PLAYER);
+	board.classList.remove(O_PLAYER);
 	if (circleTurn) {
-		board.classList.add(CIRCLE_PLAYER);
+		board.classList.add(O_PLAYER);
 	} else {
 		board.classList.add(X_PLAYER);
 	}
