@@ -20,7 +20,7 @@ input.addEventListener(
 	},
 	false
 );
-// defaul text will appear if users leaves box blank
+// default text will appear if users leaves box blank
 input.addEventListener(
 	'blur',
 	function () {

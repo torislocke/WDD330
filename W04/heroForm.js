@@ -3,7 +3,8 @@
 // assign form to variable named form
 const form = document.forms['heroForm'];
 
-// listen for the event of form being submitted and trigger makeHero function
+// listen for the event of form being submitted and trigger makeHero function - this will create a hero object based on the 
+// information provided in the hero form.
 form.addEventListener('submit', makeHero, false);
 
 // makeHero function to return hero object from form
@@ -13,7 +14,7 @@ function makeHero(event) {
 	hero.name = form.heroName.value; // create a name property based on the input fields value
 	hero.realName = form.realName.value;
 	// array iterators for checkboxes to loop over checked
-	// spread operator ... turns the node list into an array which allows filter method to return array only contining checked boxes
+	// spread operator ... turns the node list into an array which allows filter method to return array only contining checked boxes then chain the map method to the end which replaces each checkbox in the array with its value property.  This array is returned and stored in the hero.powers variable.
 	hero.powers = [...form.powers].filter((box) => box.checked).map((box) => box.value);
 	hero.category = form.category.value;
 	hero.age = form.age.value;
