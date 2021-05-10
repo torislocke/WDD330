@@ -5,6 +5,7 @@ const projects = [
 	'<a href="heroForm.html">Form Example | Hero</a>',
 	'<a href="searchForm.html">Form Example | Search</a>',
 	'<a href="notesW04.html">Week Four Notes</a>',
+	'<a href="ticTacToe.html">Team Project: Tic Tac Toe Game</a>',
 ];
 
 const article = document.querySelector('article');
