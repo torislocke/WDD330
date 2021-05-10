@@ -123,6 +123,10 @@ header h1 a {
 	margin: auto;
 	text-align: center;
 }
+em {
+	font-weight: 700;
+	color: red;
+}
 .topics {
 	margin-bottom: 15px;
 }
