@@ -31,10 +31,10 @@ resetGame.addEventListener('click', startGame);
 // clear the board when Start Game button is clicked
 restartGame.addEventListener('click', startGame);
 
-// use touchend with event listener to enable touch screen and mouse --- need to test this!!!!!!
+// use touchend with event listener for touch screen and mouse --- 
 cellElements.forEach((cell) => {
-	//cell.addEventListener('touchend', handleClick, { once: true });
-	cell.addEventListener('click', handleClick, { once: true });
+	cell.addEventListener('touchend', handleClickorTap, { once: true });
+	cell.addEventListener('click', handleClickorTap, { once: true });
 });
 
 // -- Functions are hoisted may be placed after the call back ----
@@ -46,17 +46,15 @@ function startGame() {
 	cellElements.forEach((cell) => {
 		cell.classList.remove(playerX);
 		cell.classList.remove(playerO);
-		//cell.removeEventListener('touchend', handleClick);
-		cell.removeEventListener('click', handleClick);
-		cell.addEventListener('click', handleClick, { once: true });
-		//cell.addEventListener('touchend', handleClick, {once: true,});
+		cell.removeEventListener('click', handleClickorTap);
+		cell.addEventListener('click', handleClickorTap, { once: true });
 		// callback the setBoardHoverClass function
 		setBoardHoverClass();
 		winningMessageElement.classList.remove('show');
 	});
 }
 // e = event this function looks at grid cell and places either an x or o based upon the current turn
-function handleClick(e) {
+function handleClickorTap(e) {
 	const cell = e.target;
 	// establish the currentClass as either an x or 0
 	const currentClass = circleTurn ? playerO : playerX;
@@ -73,6 +71,8 @@ function handleClick(e) {
 		swapTurns();
 		// call the hover class after the swapTurns to show x or o based on current characters turn
 		setBoardHoverClass();
+		e.preventDefault();
+		return false;
 	}
 }
 // ----------- function to print screen message if game is draw

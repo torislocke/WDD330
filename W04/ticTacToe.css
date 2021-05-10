@@ -7,8 +7,9 @@
 :root {
 	--cell-size: 80px;
 	--mark-size: calc(var(--cell-size) * 0.9);
-	--background-color: rgba(50, 19, 100);
-	--background-color-light: rgba(50, 19, 100, 0.5);
+	--background-color: rgb(22, 9, 44);
+	--gamePiece-color: rgba(50, 19, 100);
+	--gamePiece-color-light: rgba(50, 19, 100, 0.5);
 }
 body {
 	margin: 0;
@@ -27,6 +28,7 @@ h1 {
 	display: block;
 	padding: 7px;
 	font-size: 18px;
+	border-radius: 7%;
 	background-color: var(--background-color);
 	color: white;
 	transition: 0.2s ease-in;
@@ -82,13 +84,13 @@ h1 {
 .cell.x::before,
 .cell.x::after,
 .cell.circle::before {
-	background-color: var(--background-color);
+	background-color: var(--gamePiece-color);
 }
 /* set the character color when player hovers over cell */
 .board.x .cell:not(.x):not(.circle):hover::before,
 .board.x .cell:not(.x):not(.circle):hover::after,
 .board.circle .cell:not(.x):not(.circle):hover::before {
-	background-color: var(--background-color-light);
+	background-color: var(--gamePiece-color-light);
 }
 
 /* if cell is empty on hover cell shows x */
