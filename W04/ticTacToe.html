@@ -9,20 +9,23 @@
 		<script src="ticTacToe.js" defer></script>
 	</head>
 	<body>
+		<h1>Two (2) Player Tic Tac Toe Game</h1>
+		<button class="submit" id="reset">Reset Game</button>
 		<div class="board" id="board">
-			<div class="cell" data-cell></div>
-			<div class="cell" data-cell></div>
-			<div class="cell" data-cell></div>
-			<div class="cell" data-cell></div>
-			<div class="cell" data-cell></div>
-			<div class="cell" data-cell></div>
-			<div class="cell" data-cell></div>
-			<div class="cell" data-cell></div>
-			<div class="cell" data-cell></div>
+			<!-- using data-test instead of creating table -->
+			<div class="cell" cell-test></div>
+			<div class="cell" cell-test></div>
+			<div class="cell" cell-test></div>
+			<div class="cell" cell-test></div>
+			<div class="cell" cell-test></div>
+			<div class="cell" cell-test></div>
+			<div class="cell" cell-test></div>
+			<div class="cell" cell-test></div>
+			<div class="cell" cell-test></div>
 		</div>
 		<div class="winning-message" id="winningMessage">
-			<div data-winning-message-text></div>
-			<button id="restartButton">Restart</button>
+			<div class="winning-text" id="winningText"></div>
+			<button id="restartGame">Restart Game</button>
 		</div>
 	</body>
 </html>

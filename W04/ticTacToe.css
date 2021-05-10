@@ -1,26 +1,52 @@
+/* Mobile First Design */
+
 *::after,
 *::before {
 	box-sizing: border-box;
 }
 :root {
-	--cell-size: 100px;
+	--cell-size: 80px;
 	--mark-size: calc(var(--cell-size) * 0.9);
+	--background-color: rgba(50, 19, 100);
+	--background-color-light: rgba(50, 19, 100, 0.5);
 }
 body {
 	margin: 0;
 	padding: 0;
 }
+h1 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 30px auto 15px auto;
+	font-size: 18px;
+}
 
+/* center and style the reset button */
+#reset {
+	display: block;
+	padding: 7px;
+	font-size: 18px;
+	background-color: var(--background-color);
+	color: white;
+	transition: 0.2s ease-in;
+	margin: auto;
+}
+#reset:hover {
+	box-shadow: 5px 5px 5px black;
+	transform: scale(1.1);
+}
+/* center the game board to the viewport */
 .board {
 	width: 100vw;
-	height: 100vh;
+	height: 80vh;
 	display: grid;
 	grid-template-columns: repeat(3, auto);
 	justify-content: center;
 	align-content: center;
 	justify-items: center;
 }
-
+/* set cell size and remove outer boarders to create board  */
 .cell {
 	width: var(--cell-size);
 	height: var(--cell-size);
@@ -47,23 +73,25 @@ body {
 .cell:nth-child(8) {
 	border-bottom: none;
 }
-/* If a cell has a character mark not allowed */
+/* If a cell has a character change cursor to not allowed */
 .cell.x,
 .cell.circle {
 	cursor: not-allowed;
 }
+/* set the character color once the cell has been selected */
 .cell.x::before,
 .cell.x::after,
 .cell.circle::before {
-	background-color: black;
+	background-color: var(--background-color);
 }
+/* set the character color when player hovers over cell */
 .board.x .cell:not(.x):not(.circle):hover::before,
 .board.x .cell:not(.x):not(.circle):hover::after,
 .board.circle .cell:not(.x):not(.circle):hover::before {
-	background-color: lightgrey;
+	background-color: var(--background-color-light);
 }
 
-/* if cell is empty when hovering over the board if X's turn show x */
+/* if cell is empty on hover cell shows x */
 .cell.x::before,
 .cell.x::after,
 .board.x .cell:not(.x):not(.circle):hover::before,
@@ -81,7 +109,7 @@ body {
 .board.x .cell:not(.x):not(.circle):hover::after {
 	transform: rotate(-45deg);
 }
-
+/* if cell is empty on hover cell shows o */
 .cell.circle::before,
 .cell.circle::after,
 .board.circle .cell:not(.x):not(.circle):hover::before,
@@ -103,14 +131,15 @@ body {
 }
 
 .winning-message {
+	/* message shows only if there is a win or draw */
 	display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.9);
-	flex-direction: colum;
+	background-color: var(--background-color);
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	color: white;
@@ -118,17 +147,42 @@ body {
 }
 
 .winning-message button {
-	font-size: 3rem;
+	font-size: 2rem;
 	background-color: white;
-	border: 1px solid black;
-	padding: 0.25em 0.5em;
+	border: 1px double var(--background-color);
+	padding: 10px;
 	cursor: pointer;
 }
 .winning-message button:hover {
-	background-color: black;
+	background-color: darkgray;
 	color: white;
 }
-
 .winning-message.show {
 	display: flex;
+}
+@media screen and (min-width: 460px) {
+	h1 {
+		font-size: 24px;
+	}
+	:root {
+		--cell-size: 100px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	h1 {
+		font-size: 30px;
+	}
+	:root {
+		--cell-size: 120px;
+	}
+}
+@media screen and (min-width: 768px) {
+	h1 {
+		font-size: 40px;
+	}
+	.board {
+		margin-top: -30px;
+		height: 94vh;
+	}
 }
