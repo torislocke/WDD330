@@ -33,7 +33,8 @@ restartGame.addEventListener('click', startGame);
 
 // use touchend with event listener to enable touch screen and mouse --- need to test this!!!!!!
 cellElements.forEach((cell) => {
-	cell.addEventListener('touchend', handleClick, { once: true });
+	//cell.addEventListener('touchend', handleClick, { once: true });
+	cell.addEventListener('click', handleClick, { once: true });
 });
 
 // -- Functions are hoisted may be placed after the call back ----
@@ -45,10 +46,10 @@ function startGame() {
 	cellElements.forEach((cell) => {
 		cell.classList.remove(playerX);
 		cell.classList.remove(playerO);
+		//cell.removeEventListener('touchend', handleClick);
 		cell.removeEventListener('click', handleClick);
-		cell.addEventListener('click', handleClick, {
-			once: true,
-		});
+		cell.addEventListener('click', handleClick, { once: true });
+		//cell.addEventListener('touchend', handleClick, {once: true,});
 		// callback the setBoardHoverClass function
 		setBoardHoverClass();
 		winningMessageElement.classList.remove('show');
