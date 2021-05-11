@@ -58,7 +58,7 @@ function handleClickorTap(e) {
 	const cell = e.target;
 	// establish the currentClass as either an x or 0
 	const currentClass = circleTurn ? playerO : playerX;
-	// places either an x or o in the cell
+	// calls placeMark function 
 	placeMark(cell, currentClass);
 	// continue to check if a x or o has won
 	if (checkWin(currentClass)) {
@@ -71,6 +71,7 @@ function handleClickorTap(e) {
 		swapTurns();
 		// call the hover class after the swapTurns to show x or o based on current characters turn
 		setBoardHoverClass();
+		// due to touch need to prevent default behavior in browser
 		e.preventDefault();
 		return false;
 	}

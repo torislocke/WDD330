@@ -10,6 +10,7 @@
 	--background-color: rgb(22, 9, 44);
 	--gamePiece-color: rgba(50, 19, 100);
 	--gamePiece-color-light: rgba(50, 19, 100, 0.5);
+	--border: 1px solid black;
 }
 body {
 	margin: 0;
@@ -52,29 +53,25 @@ h1 {
 .cell {
 	width: var(--cell-size);
 	height: var(--cell-size);
-	border: 1px solid black;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: relative;
 	cursor: pointer;
 }
-.cell:first-child,
-.cell:nth-child(2),
-.cell:nth-child(3) {
-	border-top: none;
+
+.cell:nth-child(3n + 2) {
+	border-left: var(--border);
+	border-right: var(--border);
 }
-.cell:nth-child(3n + 1) {
-	border-left: none;
+
+.cell:nth-child(4),
+.cell:nth-child(5),
+.cell:nth-child(6) {
+	border-top: var(--border);
+	border-bottom: var(--border);
 }
-.cell:nth-child(3n + 3) {
-	border-right: none;
-}
-.cell:last-child,
-.cell:nth-child(7),
-.cell:nth-child(8) {
-	border-bottom: none;
-}
+
 /* If a cell has a character change cursor to not allowed */
 .cell.x,
 .cell.circle {
