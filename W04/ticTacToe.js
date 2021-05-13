@@ -31,7 +31,7 @@ resetGame.addEventListener('click', startGame);
 // clear the board when Start Game button is clicked
 restartGame.addEventListener('click', startGame);
 
-// use touchend with event listener for touch screen and mouse --- 
+// use touchend with event listener for touch screen and mouse ---
 cellElements.forEach((cell) => {
 	cell.addEventListener('touchend', handleClickorTap, { once: true });
 	cell.addEventListener('click', handleClickorTap, { once: true });
@@ -58,7 +58,7 @@ function handleClickorTap(e) {
 	const cell = e.target;
 	// establish the currentClass as either an x or 0
 	const currentClass = circleTurn ? playerO : playerX;
-	// calls placeMark function 
+	// calls placeMark function
 	placeMark(cell, currentClass);
 	// continue to check if a x or o has won
 	if (checkWin(currentClass)) {
@@ -69,9 +69,9 @@ function handleClickorTap(e) {
 	} else {
 		// call the swapTurns function to swap between x and o
 		swapTurns();
-		// call the hover class after the swapTurns to show x or o based on current characters turn
+		// call the hover class function after the swapTurns to show x or o based on current characters turn
 		setBoardHoverClass();
-		// due to touch need to prevent default behavior in browser
+		// due to touch need to prevent browsers default behavior
 		e.preventDefault();
 		return false;
 	}
