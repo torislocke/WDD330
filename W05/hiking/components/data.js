@@ -1,11 +1,12 @@
-// Import the hikes class so we can make new hiking objects.
+// Import the hike class so we can make new hike objects.
 import Hike from './hikeClass.js';
 
 // Create new hike object
 const bechlerHike = new Hike(
-	'hike01',
+	'Hike 1',
 	'Bechler Falls',
-	'//byui-cit.github.io/cit261/examples/',
+	// Image by Free-Photos from Pixabay
+	'../hiking/components/images/bechler_waterfall_640.jpg',
 	'Image of Bechler Falls',
 	'3 miles',
 	'Easy',
@@ -15,9 +16,10 @@ const bechlerHike = new Hike(
 
 // Create new Backpack object
 const tetonHike = new Hike(
-	'hike02',
+	'Hike 2',
 	'Teton Canyon',
-	'//byui-cit.github.io/cit261/examples/',
+	//Image by Klaus Stebani from Pixabay
+	'../hiking/components/images/teton_640.jpg',
 	'Image of Teton Canyon',
 	'3 miles',
 	'Easy',
@@ -25,9 +27,10 @@ const tetonHike = new Hike(
 	'Take Highway 33 East to Driggs. Turn left onto Teton Canyon Road. Follow that road for a few miles then turn right onto Staline Raod for a short distance, then left onto Alta Road. Veer right after Alta back onto Teton Canyon Road. There is a parking area at the trailhead.'
 );
 const denandaHike = new Hike(
-	'hike03',
+	'Hike 3',
 	'Denanda Falls',
-	'//byui-cit.github.io/cit261/examples/',
+	//Image by Cindy Lever from Pixabay
+	'../hiking/components/images/denanda_waterfall_640.jpg',
 	'Image of Bechler Falls',
 	'7 miles',
 	'Moderate',

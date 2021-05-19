@@ -1,0 +1,68 @@
+/*  minimal reset */
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	/* hack for older versions of IE */
+	*behavior: url(/scripts/boxsizing.htc);
+}
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+img {
+	max-width: 100%;
+	border: 2px double grey;
+}
+.title {
+	font-size: 60px;
+}
+
+article {
+	background-color: white;
+	max-width: 98%;
+	margin: auto;
+	display: grid;
+	grid-gap: 10px;
+	border-bottom: 4px double black;
+	grid-template-columns: 2fr 1fr;
+	grid-template-areas:
+		'header header'
+		'figure ul'
+		'figure button';
+}
+h1 {
+	grid-area: header;
+	text-align: center;
+}
+figure {
+	grid-area: figure;
+}
+ul {
+	grid-area: ul;
+	padding: 5px;
+}
+button {
+	margin-right: 10px;
+	grid-area: button;
+	max-height: 70px;
+	max-width: 170px;
+	background-color: rgb(67, 67, 70);
+	color: rgb(253, 244, 244);
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+	transition: 0.3s;
+}
+button:hover {
+	box-shadow: 5px 5px 5px rgb(8, 8, 0.5);
+}
+.hide {
+	display: none;
+}

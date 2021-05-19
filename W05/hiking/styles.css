@@ -82,6 +82,7 @@ button {
 	background-color: rgb(17, 17, 44);
 	color: rgb(253, 244, 244);
 	margin-top: 10px;
+	margin-bottom: 10px;
 	padding: 10px;
 	transition: 0.3s;
 }
