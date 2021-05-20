@@ -123,6 +123,16 @@ header h1 a {
 	margin: auto;
 	text-align: center;
 }
+.notes h3 {
+	display: block;
+	margin-top: 15px;
+	margin: auto;
+	text-align: center;
+	font-style: italic;
+}
+.notes ul {
+	margin-top: 20px;
+}
 em {
 	font-weight: 700;
 	color: red;
