@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Chapter 12 Code Along</title>
-		<link rel="stylesheet" href="../styles.css" />
+		<link rel="stylesheet" href="ninja.css" />
 		<script src="ninjaTurtles.js" async></script>
 	</head>
 	<body>
@@ -15,22 +15,20 @@
 					<h1><a href="../">Tori Locke | WDD 330 Portfolio | Week-04 </a></h1>
 				</header>
 				<main>
-					<p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
-					<p>In the developers console type:</p>
-					<ul>
-						<li>leo.name;</li>
-						<li>leo.sayHi();</li>
-						<li>raph.name;</li>
-						<li>raph.sayHi();</li>
-						<li>raph.weapon</li>
-						<li>raph.attack</li>
-						<li>Object.getPrototypeOf(raph)</li>
-						<li>raph.constructor.prototype</li>
-						<li>raph.hasOwnProperty('name')</li>
-						<li>raph.hasOwnProperty('weapon')</li>
-						<li>mikey.attack();</li>
-						<li>mikey.eat();</li>
-					</ul>
+					<section class="dojo">
+						<div class="quiz-body">
+							<header>
+								<h1>Quiz Ninja!</h1>
+								<div id="timer">Time: <strong>20</strong></div>
+								<div id="score">Score: <strong>0</strong></div>
+							</header>
+							<div id="question"></div>
+							<div id="response"></div>
+							<div id="result"></div>
+							<div id="info"></div>
+							<button id="start">Click to Start</button>
+						</div>
+					</section>
 				</main>
 			</div>
 

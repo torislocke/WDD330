@@ -4,9 +4,6 @@ body {
 	background: #5f1c1c;
 	font-family: 'Roboto', sans-serif;
 }
-header h1 a {
-	color: white;
-}
 .dojo {
 	background: url(https://cdn.rawgit.com/alexmwalker/6acbe9040d9fe6e5e9fd758a25e1b2a5/raw/9c8131eb2ccc1e3839a5a5114cb16b5dc74daf04/dojo.svg)
 		no-repeat;

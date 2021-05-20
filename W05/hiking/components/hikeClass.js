@@ -10,11 +10,5 @@ class Hike {
 		this.description = description;
 		this.directions = directions;
 	}
-	// create a method to call images
-// 	imgBasePath = function() '//byui-cit.github.io/cit261/examples/';
-// //on load grab the array and insert it into the page
-// window.addEventListener('load', () => {
-// 	showHikeList();
-// });
 }
 export default Hike;

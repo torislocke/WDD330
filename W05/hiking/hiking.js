@@ -26,7 +26,7 @@ const hikeList = [
 		imgAlt: 'Image of Bechler Falls',
 		distance: '7 miles',
 		difficulty: 'Moderate',
-		description: 'Beautiful hike through Bechler meadows river to Denanda Falls',
+		description: 'Beautiful hikethrough Bechle r meadows river to Denanda Falls',
 		directions:
 			'Take Highway 20 north to Ashton. Turn right into the town and continue through. Follow that road for a few miles then turn left again onto the Cave Falls road. Drive to until you see the sign for Bechler Meadows on the left. Turn there. There is a parking area at the trailhead.',
 	},
@@ -37,6 +37,8 @@ const imgBasePath = '//byui-cit.github.io/cit261/examples/';
 window.addEventListener('load', () => {
 	showHikeList();
 });
+
+// add a button to display details of hike
 
 function showHikeList() {
 	const hikeListElement = document.getElementById('hikes');
@@ -63,7 +65,16 @@ function renderOneHike(hike) {
                     <h3>Difficulty</h3>
                     <p>${hike.difficulty}</p>
                 </div>
+                <button class="details">Show Hike Details</button>
+                <p class="hide">${hike.description}</p>
         </div>`;
-
+	const button = item.querySelector('.details');
+	const status = item.querySelector('.hide');
+	button.addEventListener('click', (event) => {
+		button.innerText === 'Show Hike Details'
+			? (button.innerText = 'Hide Hike Details')
+			: (button.innerText = 'Show Hike Details');
+		status.classList.toggle('hide');
+	});
 	return item;
 }
