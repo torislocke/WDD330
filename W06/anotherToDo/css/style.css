@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Stint+Ultra+Condensed&display=swap');
+
+/*  minimal reset */
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+}
+
+.homeButton {
+	display: block;
+	width: 110px;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: rgb(117, 11, 103, 0.7);
+	margin: 35px 0 10px 20px;
+}
+a.homeButton {
+	text-decoration: none;
+	color: white;
+	text-align: center;
+	transition: 0.3s;
+}
+
+.homeButton:hover {
+	transform: scale(1.1);
+	background-color: rgb(117, 11, 103);
+}
+
+.page-container {
+	max-width: 700px;
+	margin: auto;
+	position: relative;
+	height: 87vh;
+}
+header h1 {
+	text-align: center;
+	font-family: 'Stint Ultra Condensed', cursive;
+	font-weight: 800;
+	font-style: italic;
+	margin: 0 0 40px 0;
+	font-size: 45px;
+	letter-spacing: 1.5px;
+	color: rgb(61, 5, 54, 0.7);
+}
+.content-wrapper {
+	width: 100%;
+	margin: 0;
+	padding: 10px;
+	border: 3px double rgb(61, 5, 54, 0.7);
+}
+.main_content {
+	max-width: 550px;
+	margin: auto;
+}
+
+ul {
+	list-style: none;
+	padding: 0px;
+	width: 98%;
+}
+ul li {
+	list-style: none;
+	border-bottom: 1px solid rgb(117, 11, 103, 0.2);
+	padding: 5px 0;
+	font-weight: 100;
+	display: flex;
+	justify-content: space-between;
+	color: rgb(61, 5, 54);
+}
+.todo_description {
+	margin-bottom: 10px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-grow: 1;
+	margin-left: 10px;
+	margin-right: 100px;
+	font-size: 22px;
+}
+label {
+	margin-top: 7px;
+}
+
+.delete_button {
+	background-color: white;
+	border: none;
+	font-size: 32px;
+	font-weight: 700;
+	cursor: pointer;
+}
+.delete_button:hover {
+	color: red;
+}
+
+.submit {
+	width: 50px;
+	height: 50px;
+	background-color: rgb(117, 11, 103, 0.7);
+	border: none;
+	color: white;
+	font-size: 40px;
+	transition: 0.2s;
+}
+.submit:hover {
+	background-color: rgb(117, 11, 103);
+	transform: scale(1.1);
+}
+
+form {
+	display: flex;
+	margin: 5px;
+	margin-top: 80px;
+}
+
+input[type='text'] {
+	width: 100%;
+	padding: 10px;
+	border-radius: 4px;
+	border: 1px solid rgb(117, 11, 103, 0.7);
+	font-size: 16px;
+}
+/* style the checkbox and checkmark to note task is complete */
+.container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: white;
+	border: 1px solid rgb(61, 5, 54);
+}
+.container:hover input ~ .checkmark {
+	background-color: rgb(61, 5, 54, 0.3);
+}
+
+/* checkbox is checked */
+.container input:checked ~ .checkmark {
+	background-color: rgb(61, 5, 54, 0.7);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+	content: '';
+	position: absolute;
+	display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+/* The check box area */
+.container {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+/* strike out the task item when checkbox is checked */
+.checked {
+	text-decoration: line-through;
+}
+/* style the filter section */
+
+.filters {
+	margin-top: 40px;
+	display: grid;
+	grid-template-columns: 2fr 1fr 1fr 1fr;
+	justify-content: space-around;
+	justify-items: center;
+}
+
+.filter_item {
+	background-color: rgb(117, 11, 103, 0.7);
+	border-radius: 5px;
+	color: white;
+	padding: 10px 20px;
+	cursor: pointer;
+	transition: 0.2s;
+}
+.filter_item:hover {
+	background-color: rgb(117, 11, 103, 1);
+	transform: scale(1.1);
+}
+
+.taskLeft {
+	background-color: white;
+	place-self: center;
+	font-weight: 700;
+	color: rgb(117, 11, 103, 1);
+}
+::placeholder {
+	color: rgb(117, 11, 103, 1);
+}
+
+.filter_item_active {
+	background-color: rgb(117, 11, 103, 1);
+}

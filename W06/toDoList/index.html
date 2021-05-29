@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Tori Locke" />
+		<meta name="keywords" content="JavaScript To-Do-List Project" />
+		<meta name="description" content="Week 5/6 JavaScript Project to create a To Do List" />
+		<title>To Do List Application</title>
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+
+	<body>
+		<header>
+			<div class="button"><a href="../../">Return Home</a></div>
+			<h1>TO DO LIST</h1>
+		</header>
+		<main>
+			<ul id="todo" class="todo-list">
+				<!-- location for To-Do List Items -->
+			</ul>
+			<div class="totals" id="total">
+				<p class="total_activities" id="task-counter"></p>
+				<div class="category selected_category" id="filter-all">
+					<p>ALL</p>
+				</div>
+				<div class="category" id="filter-active">
+					<p>ACTIVE</p>
+				</div>
+				<div class="category" id="filter-completed">
+					<p>COMPLETED</p>
+				</div>
+			</div>
+			<div id="remainingTasks"></div>
+
+			<div class="section-add">
+				<input
+					autofocus
+					type="text"
+					aria-label="Enter a new todo item"
+					id="new_task"
+					placeholder="Add a New Task"
+				/>
+				<input type="submit" id="addnew" value="+ Add Task" />
+			</div>
+		</main>
+
+		<script src="js/toDos.js" type="module"></script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>To-Do List Application</title>
+		<link rel="stylesheet" href="../normalize.css" />
+		<link rel="stylesheet" href="css/style.css" media="all" />
+		<script type="module" src="js/ToDos.js"></script>
+	</head>
+	<body>
+		<a class="homeButton" href="../index.html">Return Home</a>
+		<div class="page-container">
+			<div class="content-wrapper">
+				<header>
+                    <!-- wireframe shows Todos - modified to To-Do List -->
+					<h1>To-Do List</h1>
+				</header>
+				<main>
+                    <!-- wireframe shows list items and list filters above input -->
+					<div id="list"></div>
+                    <div id="filters"></div>
+					<form id="toDo">
+						<input
+					autofocus
+					type="text"
+					aria-label="Enter a new task"
+					id="new_task"
+					placeholder="Add a New Task"
+                    required
+				/>
+				<input type="submit" id="addnew" value="+ Add Task" />
+					</form>
+				</main>
+			</div>
+			<footer>
+				<small>Tori Locke | WDD 330 | Spring 2021</small>
+			</footer>
+		</div>
+	</body>
+</html>

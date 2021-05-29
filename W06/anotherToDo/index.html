@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>To-Do List Application</title>
+		<link rel="stylesheet" href="css/style.css" media="all" />
+		<!-- the type of module is automatically deferred -->
+		<script src="js/toDos.js" type="module"></script>
+	</head>
+	<body>
+		<a class="homeButton" href="../../index.html">Return Home</a>
+		<div class="page-container">
+			<div class="content-wrapper">
+				<header>
+					<h1>To-Do List</h1>
+				</header>
+				<main>
+					<!-- display user entered to do task list -->
+					<div id="list">
+						<ul class="list_container"></ul>
+					</div>
+					<!-- Wireframe required filters -->
+					<div class="filters">
+						<div class="taskLeft"></div>
+						<div class="filter_item all_item filter_item_active">All</div>
+						<div class="filter_item active_item">Active</div>
+						<div class="filter_item complete_item">Complete</div>
+					</div>
+					<!-- Wireframe user input of to do item -->
+					<form>
+						<input
+							autofocus
+							type="text"
+							class="taskContent"
+							aria-label="Enter a new task"
+							id="new_task"
+							placeholder="Add a New Task"
+							required
+						/>
+						<button class="submit">+</button>
+					</form>
+				</main>
+			</div>
+		</div>
+	</body>
+</html>
