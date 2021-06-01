@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Tori Locke" />
+		<meta name="keywords" content="JavaScript Projects" />
+		<meta name="description" content="Notes during Week seven (7) of WDD 330 BYU course" />
+		<!-- add css styling to site -->
+		<link rel="stylesheet" href="../styles.css" />
+		<script src="week5.js" defer></script>
+
+		<title>Week Seven Notes</title>
+	</head>
+
+	<body>
+		<div class="page-container">
+			<div class="content-wrapper">
+				<header>
+					<h1><a href="../">Tori Locke | WDD 330 Portfolio | Week-07</a></h1>
+				</header>
+				<main>
+					<section class="notes">
+						<h2>Summary Notes - Chapter Eleven (11) Further Functions & Chapter Thirteen (13) Ajax</h2>
+						<h3>JavaScript: Novice to Ninja, 2nd Edition</h3>
+						<div class="mainContent">
+							<ul>
+								<li>
+									 Functions are first-class objects. They can have their own properties and methods, as well as accepting other functions as parameters and being returned by other functions. 
+								</li>
+
+								<li>
+									ES6, the spread operator can be used to split an array of values into separate parameters.
+								</li>
+								<li>
+									If a function doesn’t refer to an object as this in its body, it can still be called using the call() method.  You need to provide null as its first argument.
+								</li>
+								<li>
+                                    If a function takes some time to compute a return value, save the result in a cache property to improve users performance.
+                                </li>
+								<li>
+                                    Placing any code that uses the temporary variable inside an IIFE will ensure it’s only available while the IIFE is invoked, then it will disappear.
+                                </li>
+								<li>
+									An IIFE can be used to set up any initialization code that there’ll be no need for again. Because the code is only run once, there’s no need to create any reusable, named functions, and all the variables will also be temporary.
+								</li>
+								<li>
+									Basic form of debugging is to use alert() to stop a programming from running until
+									ok is clicked.
+								</li>
+
+								<li>Browser Debugger to create breakpoint in code.</li>
+								<li>Testing Frameworks: Jest, created by Facebook.</li>
+							</ul>
+						</div>
+					</section>
+				</main>
+			</div>
+			<footer>
+				<small>Tori Locke | WDD 330 | Spring 2021</small>
+			</footer>
+		</div>
+	</body>
+</html>
