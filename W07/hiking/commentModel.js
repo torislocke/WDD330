@@ -1,34 +1,28 @@
-// requirement
-// create class with constructor prototype
-
 // import local storage helpers
 import * as lsHelpers from './utilities.js';
 
-
+// requirement create class with constructor prototype
 class commentModel {
-	//methods and properties shared by all kinds of comments
 	constructor(type) {
 		this.type = type;
 		this.comments = lsHelpers.readFromLocalStorage(this.type) || [];
 	}
 
 	filterCommentsByName(name) {
-		//method to filter/sort comments by hikeName
+		// requirement method to filter/sort comments by hikeName
 		const filteredArray = getAllComments().filter((item) => item.name == name);
 		return filteredArray;
 	}
 	// category is created by hikeName - to filter comments by a specific hike only
 	getComments(category = null) {
-		//method to get whichever comment list is requested
 		if (category === null) {
 			return this.comments;
 		} else {
 			return this.comments.filter((item) => item.name == category);
 		}
 	}
-	// requirement 
+	// requirement create comment object
 	addComment(hikeName, userInput) {
-		//create a new comment object
 		const newComment = {
 			name: hikeName,
 			date: new Date(),
@@ -74,9 +68,8 @@ function renderCommentList(parent, commentArray) {
 	commentArray.forEach((comment) => {
 		let item = document.createElement('li');
 		item.innerHTML = `
-	
-            <h5>${comment.name} &mdash; ${formatDate(comment.date)}  </h5>
-            <p class="comm-notes">${comment.comment}</p>`;
+	        <h4>${comment.name} &mdash; ${formatDate(comment.date)}  </h4>
+            <p class="commentContent">${comment.comment}</p>`;
 		parent.appendChild(item);
 	});
 }
@@ -93,9 +86,9 @@ export default class Comments {
 		document.getElementById('comment_submit').onclick = () => {
 			//grab the standard comment model with these parameters
 			this.model.addComment(commentName, userComment.value);
-			//then reset the field to empty
+			//  reset the textarea with placeholder content
 			userComment.value = '';
-			//and show the comment list
+			// display the new comment list
 			this.showCommentList(commentName);
 		};
 	}
