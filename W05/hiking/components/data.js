@@ -6,7 +6,7 @@ const bechlerHike = new Hike(
 	'Hike 1',
 	'Bechler Falls',
 	// Image by Free-Photos from Pixabay
-	'../hiking/components/images/bechler_waterfall_640.jpg',
+	'../hiking/components/images/bechler.jpg',
 	'Image of Bechler Falls',
 	'3 miles',
 	'Easy',
@@ -14,12 +14,12 @@ const bechlerHike = new Hike(
 	'Take Highway 20 north to Ashton. Turn right into the town and continue through. Follow that road for a few miles then turn left again onto the Cave Falls road.Drive to the end of the Cave Falls road. There is a parking area at the trailhead.'
 );
 
-// Create new Backpack object
+// Create new hike object
 const tetonHike = new Hike(
 	'Hike 2',
 	'Teton Canyon',
 	//Image by Klaus Stebani from Pixabay
-	'../hiking/components/images/teton_640.jpg',
+	'../hiking/components/images/teton.jpg',
 	'Image of Teton Canyon',
 	'3 miles',
 	'Easy',
@@ -30,7 +30,7 @@ const denandaHike = new Hike(
 	'Hike 3',
 	'Denanda Falls',
 	//Image by Cindy Lever from Pixabay
-	'../hiking/components/images/denanda_waterfall_640.jpg',
+	'../hiking/components/images/dunanda.jpg',
 	'Image of Bechler Falls',
 	'7 miles',
 	'Moderate',

@@ -3,6 +3,7 @@ import hikeObjectArray from './components/data.js';
 window.addEventListener('load', (hike) => {
 	hike.imgSrc;
 });
+
 const hikeList = hikeObjectArray.map((hike) => {
 	let hikeArticle = document.createElement('article');
 	hikeArticle.classList.add('hike');

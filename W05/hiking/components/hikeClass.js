@@ -1,4 +1,4 @@
-// Set up the hike class
+// Set up the hike class 
 class Hike {
 	constructor(id, name, imgSrc, imgAlt, distance, difficulty, description, directions) {
 		this.id = id;
