@@ -1,0 +1,81 @@
+/*  minimal reset */
+
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	/* hack for older versions of IE */
+	*behavior: url(/scripts/boxsizing.htc);
+}
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+h1,
+h2,
+h3 {
+	text-align: center;
+	color: rgb(19, 13, 13, 0.7);
+}
+h1 {
+	font-size: 22px;
+}
+h1 a {
+	color: rgb(19, 13, 13, 0.7);
+}
+a {
+	text-decoration: none;
+}
+.homeButton {
+	display: block;
+	width: 150px;
+	margin: auto;
+	text-align: center;
+	padding: 10px;
+	background-color: rgb(19, 13, 13);
+	color: white;
+	border-radius: 5px;
+	transition: 0.2s;
+}
+
+input {
+	padding: 10px;
+	width: 92px;
+	background-color: rgb(19, 13, 13);
+	color: white;
+	border-radius: 5px;
+	transition: 0.2s;
+}
+.homeButton {
+	text-align: center;
+}
+main {
+	margin-top: 15px;
+}
+input:hover {
+	transform: scale(1.1);
+	box-shadow: 5px 5px 5px rgb(19, 13, 13, 0.7);
+}
+li {
+	margin: 10px;
+}
+#apiInfo {
+	max-width: 80vw;
+	list-style: none;
+	margin-bottom: 25px;
+}
+.next {
+	text-align: center;
+}
+.next input:first-of-type {
+	margin-right: 50px;
+}
+
+footer {
+	margin-top: 20px;
+	text-align: center;
+}
