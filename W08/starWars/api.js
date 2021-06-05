@@ -1,12 +1,12 @@
-// Star Wars data from SWAPI
+// create an empty array
 let starShipsArray = [];
 
+//https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 fetch('https://swapi.dev/api/starships/', {
-	method: 'GET',
+	method: 'GET', // Star Wars data from SWAPI
 })
-	.then((response) => {
-		return response.json();
-	})
+	.then(response => response.json())
+
 
 	.then((starships) => {
 		let ships = starships.results;
@@ -18,24 +18,25 @@ fetch('https://swapi.dev/api/starships/', {
 		showShips(ships);
 
 		if (nextURL) {
-			next.onclick = () => nextTen(nextURL);
+			next.onclick = () => fetchTen(nextURL);
 		}
 
 		if (previousURL) {
-			previous.onclick = () => nextTen(previousURL);
+			previous.onclick = () => fetchTen(previousURL);
 		}
 	});
 
+// populate the starShipsArray
 function showShips(ships) {
 	apiInfo.innerHTML = '';
 	for (let i = 0; i < ships.length; i++) {
-		let apiContent = apiInfo.appendChild(createElement('li', ships[i].name, 'starships'));
+		let apiContent = apiInfo.appendChild(createElement('section', ships[i].name, 'starships'));
 		apiContent.addEventListener('click', details);
 		apiContent.setAttribute('id', ships[i].name);
 		starShipsArray.push(ships[i]);
 	}
 }
-
+// display the details of a selected element
 function details(event) {
 	let target = event.target;
 	let id = target.getAttribute('id');
@@ -44,7 +45,7 @@ function details(event) {
 	let manufacturer = ship.manufacturer;
 	let starship_class = ship.starship_class;
 	let apiInfo = document.getElementById(id);
-	let container = apiInfo.appendChild(createElement('div', '', 'container'));
+	let container = apiInfo.appendChild(createElement('ul', '', 'container'));
 	container.appendChild(createElement('li', 'Model: ' + model, 'model'));
 	container.appendChild(createElement('li', 'Manufacturer: ' + manufacturer, 'manufacturer'));
 	container.appendChild(createElement('li', 'Class: ' + starship_class, 'starship_class'));
@@ -52,7 +53,8 @@ function details(event) {
 	const buttonClose = container.appendChild(createElement('input'));
 	buttonClose.setAttribute('id', 'buttonClose');
 	buttonClose.setAttribute('type', 'submit');
-	buttonClose.setAttribute('value', 'x');
+	buttonClose.setAttribute('value', 'Close Details');
+	buttonClose.setAttribute('class', 'closeButton');
 	buttonClose.addEventListener('click', close);
 	target.removeEventListener('click', details);
 }
@@ -73,7 +75,7 @@ function createElement(tag, text, className) {
 	return genElement;
 }
 
-function nextTen(url) {
+function fetchTen(url) {
 	const next = document.getElementById('next');
 	const previous = document.getElementById('previous');
 	if (url) {
@@ -86,11 +88,11 @@ function nextTen(url) {
 				previousURL = nextShips.previous;
 
 				if (nextURL) {
-					next.onclick = () => nextTen(nextURL);
+					next.onclick = () => fetchTen(nextURL);
 				}
 
 				if (previousURL) {
-					previous.onclick = () => nextTen(previousURL);
+					previous.onclick = () => fetchTen(previousURL);
 				}
 			});
 	}

@@ -68,11 +68,23 @@ li {
 	list-style: none;
 	margin-bottom: 25px;
 }
+.starships {
+	padding: 10px;
+}
+.closeButton {
+	padding: 7px;
+	text-align: center;
+	background-color: red;
+    border: 0;
+}
 .next {
 	text-align: center;
 }
 .next input:first-of-type {
 	margin-right: 50px;
+}
+.container {
+	border: 1px solid black;
 }
 
 footer {
