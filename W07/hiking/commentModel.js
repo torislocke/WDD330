@@ -4,6 +4,7 @@
 // import local storage helpers
 import * as lsHelpers from './utilities.js';
 
+
 class commentModel {
 	//methods and properties shared by all kinds of comments
 	constructor(type) {
@@ -12,11 +13,11 @@ class commentModel {
 	}
 
 	filterCommentsByName(name) {
-		//method to filter and pull comments that apply to a single selected item
+		//method to filter/sort comments by hikeName
 		const filteredArray = getAllComments().filter((item) => item.name == name);
 		return filteredArray;
 	}
-	// category is created by hikeName - to filter comments by hike
+	// category is created by hikeName - to filter comments by a specific hike only
 	getComments(category = null) {
 		//method to get whichever comment list is requested
 		if (category === null) {
@@ -25,6 +26,7 @@ class commentModel {
 			return this.comments.filter((item) => item.name == category);
 		}
 	}
+	// requirement 
 	addComment(hikeName, userInput) {
 		//create a new comment object
 		const newComment = {
@@ -97,6 +99,7 @@ export default class Comments {
 			this.showCommentList(commentName);
 		};
 	}
+	// requirement create showCommentsList method
 	showCommentList(category = null) {
 		const parent = document.getElementById('comments');
 		//if there are no comments yet, add the comment form

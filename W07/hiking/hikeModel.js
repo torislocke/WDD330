@@ -32,6 +32,7 @@ export default class Hikes {
 		this.parentElement.innerHTML = '';
 		this.backButton.classList.remove('hidden');
 		this.parentElement.appendChild(renderHikeDetails(hike));
+	//requirement insert showCommentsList into Hikes class
 		hikeComments.showCommentList(hike.name);
 	}
 	addHikeListener() {
