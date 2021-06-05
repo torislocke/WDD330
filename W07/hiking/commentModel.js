@@ -16,6 +16,7 @@ class commentModel {
 		const filteredArray = getAllComments().filter((item) => item.name == name);
 		return filteredArray;
 	}
+	// category is created by hikeName - to filter comments by hike
 	getComments(category = null) {
 		//method to get whichever comment list is requested
 		if (category === null) {
@@ -25,7 +26,6 @@ class commentModel {
 		}
 	}
 	addComment(hikeName, userInput) {
-		//method to create a new comment to be added to the array
 		//create a new comment object
 		const newComment = {
 			name: hikeName,
@@ -51,7 +51,7 @@ const commentForm = `
 	<h3 class="seeAllComments">Review All Comments</h3>
     <ul class="commentList" id="commentList"></ul>`;
 
-	
+// reused this code - need to update to simplify
 function formatDate(dateObject) {
 	dateObject = new Date(dateObject);
 	const year = dateObject.getFullYear();
@@ -66,15 +66,15 @@ function formatDate(dateObject) {
 }
 
 function renderCommentList(parent, commentArray) {
-	//reset the parent element
+	//reset the text area to empty
 	parent.innerHTML = '';
-	//add an item for each comment
-	commentArray.forEach((commObject) => {
+	//add each comment
+	commentArray.forEach((comment) => {
 		let item = document.createElement('li');
 		item.innerHTML = `
 	
-            <h5>${commObject.name} &mdash; ${formatDate(commObject.date)}  </h5>
-            <p class="comm-notes">${commObject.comment}</p>`;
+            <h5>${comment.name} &mdash; ${formatDate(comment.date)}  </h5>
+            <p class="comm-notes">${comment.comment}</p>`;
 		parent.appendChild(item);
 	});
 }
@@ -114,7 +114,7 @@ export default class Comments {
 			document.querySelector('.commentForm').classList.add('hidden');
 		}
 		//get the comment array from the model
-		let commentArr = this.model.getComments(category);
-		renderCommentList(parent.lastChild, commentArr);
+		let commentArray = this.model.getComments(category);
+		renderCommentList(parent.lastChild, commentArray);
 	}
 }
