@@ -6,7 +6,7 @@ const bechlerHike = new Hike(
 	'Hike 1',
 	'Bechler Falls',
 	// Image by Free-Photos from Pixabay
-	'../hiking/components/images/bechler.jpg',
+	'bechler.jpg',
 	'Image of Bechler Falls',
 	'3 miles',
 	'Easy',
@@ -19,7 +19,7 @@ const tetonHike = new Hike(
 	'Hike 2',
 	'Teton Canyon',
 	//Image by Klaus Stebani from Pixabay
-	'../hiking/components/images/teton.jpg',
+	'teton.jpg',
 	'Image of Teton Canyon',
 	'3 miles',
 	'Easy',
@@ -30,7 +30,7 @@ const denandaHike = new Hike(
 	'Hike 3',
 	'Denanda Falls',
 	//Image by Cindy Lever from Pixabay
-	'../hiking/components/images/dunanda.jpg',
+	'denanda.jpg',
 	'Image of Bechler Falls',
 	'7 miles',
 	'Moderate',
