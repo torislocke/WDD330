@@ -4,12 +4,11 @@
 
 const smartyUrl = 'https://us-street.api.smartystreets.com/street-address?auth-id=96942503650349466&candidates=10';
 
-const smartyInit = {
-	headers: {
-		'Content-Type': 'application/json',
-		Host: 'us-street.api.smartystreets.com',
-	},
-};
+//   Headers() constructor. A headers object is a simple multi-map of names to values: below passes an array of arrays or an object literal to the constructor
+const smartyInit = new Headers({
+	'Content-Type': 'application/json',
+	Host: 'us-street.api.smartystreets.com',
+});
 
 const parksUrl = 'https://developer.nps.gov/api/v1/parks?stateCode=ca&api_key=0KQzSZtWF3r8nyuP6lctdEMFxxB90GxKbNmFenot';
 
@@ -49,6 +48,8 @@ const parkUpdateUIError = function (error) {
 	console.log(error);
 };
 
+//Checking that the fetch was successful
+// https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 const handleErrors = function (response) {
 	if (!response.ok) {
 		throw `${response.status} : ${response.statusText}`;
