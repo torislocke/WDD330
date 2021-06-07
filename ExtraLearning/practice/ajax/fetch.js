@@ -12,6 +12,12 @@ const smartyInit = new Headers({
 
 const parksUrl = 'https://developer.nps.gov/api/v1/parks?stateCode=ca&api_key=0KQzSZtWF3r8nyuP6lctdEMFxxB90GxKbNmFenot';
 
+const parksFallback = {
+	url: 'https://www.nps.gov/alca/index.htm',
+	fullName: 'Alcatraz Island',
+	description:
+		"Alcatraz reveals stories of American incarceration, justice, and our common humanity. This small island was once a fort, a military prison, and a maximum security federal penitentiary. In 1969, the Indians of All Tribes occupied Alcatraz for 19 months in the name of freedom and Native American civil rights. We invite you to explore Alcatraz's complex history and natural beauty.",
+};
 // DOM selection of address fields
 const addressField = document.querySelector('#address');
 const cityField = document.querySelector('#city');
@@ -46,20 +52,26 @@ const smartyUpdateUIError = function (error) {
 
 const parkUpdateUIError = function (error) {
 	console.log(error);
+	// if no response, display the below data
+	parkName.textContent = parksFallback.fullName;
+	parkName.href = parksFallback.url;
+	parkDescription.textContent = parksFallback.description;
+	parkThumb.src = 'https://www.nps.gov/common/commonspot/templates/assetsCT/images/branding/logo.png';
+	parkSection.classList.remove('hidden');
 };
 
 //Checking that the fetch was successful
 // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 const handleErrors = function (response) {
 	if (!response.ok) {
-		throw `${response.status} : ${response.statusText}`;
+		throw new Error(`${response.status} : ${response.statusText}`);
 	}
-	return response.json();
+	return response.json(); //
 };
 const createRequest = function (url, succeed, fail, init) {
 	fetch(url, init)
-		.then((response) => handleErrors(response))
-		.then((data) => succeed(data))
+		.then((response) => handleErrors(response)) // parses response
+		.then((data) => succeed(data)) //
 		.catch((error) => fail(error));
 };
 const checkCompletion = function () {
