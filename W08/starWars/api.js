@@ -1,20 +1,34 @@
+'use strict';
+// Fetch with promise
+// must use polyfill for older browser support
+
 // create an empty array
 let starShipsArray = [];
 
+// create specific urls to retrieve information
+const page1URL = 'https://swapi.dev/api/starships/';
+const page2URL = 'https://swapi.dev/api/starships/?page=2';
+const page3URL = 'https://swapi.dev/api/starships/?page=3';
+const page4URL = 'https://swapi.dev/api/starships/?page=4';
+const starshipsURL = 'https://swapi.dev/api/starships/';
+
 //https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-fetch('https://swapi.dev/api/starships/', {
+fetch(starshipsURL, {
 	method: 'GET', // Star Wars data from SWAPI
 })
-	.then(response => response.json())
-
-
+	.then((response) => {
+		if (!response.ok) {
+			throw new Error('Network response was not ok');
+		}
+		return response.json();
+	})
 	.then((starships) => {
 		let ships = starships.results;
 		let nextURL = starships.next;
 		let previousURL = starships.previous;
-		const previous = document.getElementById('previous');
-		const next = document.getElementById('next');
-
+		const previous = document.querySelector('#previous');
+		const next = document.querySelector('#next');
+		const loading = document.querySelector('#loading').classList.add('hide');
 		showShips(ships);
 
 		if (nextURL) {
@@ -24,6 +38,9 @@ fetch('https://swapi.dev/api/starships/', {
 		if (previousURL) {
 			previous.onclick = () => fetchTen(previousURL);
 		}
+	})
+	.catch((error) => {
+		console.error('There has been a problem with your fetch operation:', error);
 	});
 
 // populate the starShipsArray
@@ -76,16 +93,15 @@ function createElement(tag, text, className) {
 }
 
 function fetchTen(url) {
-	const next = document.getElementById('next');
-	const previous = document.getElementById('previous');
+	const next = document.querySelector('#next');
+	const previous = document.querySelector('#previous');
 	if (url) {
 		fetch(url)
 			.then((response) => response.json())
 			.then((nextShips) => {
 				showShips(nextShips.results);
-
-				nextURL = nextShips.next;
-				previousURL = nextShips.previous;
+				let nextURL = nextShips.next;
+				let previousURL = nextShips.previous;
 
 				if (nextURL) {
 					next.onclick = () => fetchTen(nextURL);
@@ -96,4 +112,139 @@ function fetchTen(url) {
 				}
 			});
 	}
+}
+
+// connect event to type of information user wants to view
+const viewPage1 = document.querySelector('#page1').addEventListener('click', getPage1);
+const viewPage2 = document.querySelector('#page2').addEventListener('click', getPage2);
+const viewPage3 = document.querySelector('#page3').addEventListener('click', getPage3);
+const viewPage4 = document.querySelector('#page4').addEventListener('click', getPage4);
+
+function getPage1() {
+	fetch(page1URL, {
+		method: 'GET', // Star Wars data from SWAPI
+	})
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error('Network response was not ok');
+			}
+			// returned promise
+			return response.json();
+		})
+		.then((starships) => {
+			let ships = starships.results;
+			let nextURL = starships.next;
+			let previousURL = starships.previous;
+			const previous = document.querySelector('#previous');
+			const next = document.querySelector('#next');
+			showShips(ships);
+
+			if (nextURL) {
+				next.onclick = () => fetchTen(nextURL);
+			}
+
+			if (previousURL) {
+				previous.onclick = () => fetchTen(previousURL);
+			}
+		})
+		.catch((error) => {
+			console.error('There has been a problem with your fetch operation:', error);
+		});
+}
+
+function getPage2() {
+	fetch(page2URL, {
+		method: 'GET', // Star Wars data from SWAPI
+	})
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error('Network response was not ok');
+			}
+			// returned promise
+			return response.json();
+		})
+		.then((starships) => {
+			let ships = starships.results;
+			let nextURL = starships.next;
+			let previousURL = starships.previous;
+			const previous = document.querySelector('#previous');
+			const next = document.querySelector('#next');
+			showShips(ships);
+
+			if (nextURL) {
+				next.onclick = () => fetchTen(nextURL);
+			}
+
+			if (previousURL) {
+				previous.onclick = () => fetchTen(previousURL);
+			}
+		})
+		.catch((error) => {
+			console.error('There has been a problem with your fetch operation:', error);
+		});
+}
+
+
+function getPage3() {
+	fetch(page3URL, {
+		method: 'GET', // Star Wars data from SWAPI
+	})
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error('Network response was not ok');
+			}
+			// returned promise
+			return response.json();
+		})
+		.then((starships) => {
+			let ships = starships.results;
+			let nextURL = starships.next;
+			let previousURL = starships.previous;
+			const previous = document.querySelector('#previous');
+			const next = document.querySelector('#next');
+			showShips(ships);
+
+			if (nextURL) {
+				next.onclick = () => fetchTen(nextURL);
+			}
+
+			if (previousURL) {
+				previous.onclick = () => fetchTen(previousURL);
+			}
+		})
+		.catch((error) => {
+			console.error('There has been a problem with your fetch operation:', error);
+		});
+}
+
+function getPage4() {
+	fetch(page4URL, {
+		method: 'GET', // Star Wars data from SWAPI
+	})
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error('Network response was not ok');
+			}
+			// returned promise
+			return response.json();
+		})
+		.then((starships) => {
+			let ships = starships.results;
+			let nextURL = starships.next;
+			let previousURL = starships.previous;
+			const previous = document.querySelector('#previous');
+			const next = document.querySelector('#next');
+			showShips(ships);
+
+			if (nextURL) {
+				next.onclick = () => fetchTen(nextURL);
+			}
+
+			if (previousURL) {
+				previous.onclick = () => fetchTen(previousURL);
+			}
+		})
+		.catch((error) => {
+			console.error('There has been a problem with your fetch operation:', error);
+		});
 }
