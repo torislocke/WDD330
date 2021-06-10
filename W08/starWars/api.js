@@ -184,7 +184,6 @@ function getPage2() {
 		});
 }
 
-
 function getPage3() {
 	fetch(page3URL, {
 		method: 'GET', // Star Wars data from SWAPI
