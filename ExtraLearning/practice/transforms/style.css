@@ -1,0 +1,7 @@
+.ad-ad2 h1 span {
+    font-size: 30px;
+    color: #999999;
+    display: inline-block;
+    color: #484848;  
+     transform: rotate(10deg) translateX(40px) scale(1.5);
+}

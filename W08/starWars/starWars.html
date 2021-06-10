@@ -21,13 +21,19 @@
 			<div class="content-wrapper">
 				<div id="content">
 					<h2>Star Wars</h2>
+					<!-- Here a loader is created which 
+             loads till response comes -->
+
+					<div role="status" id="loading">
+						<span class="sr-only">Loading...</span>
+					</div>
 					<p>Choose the Star Wars cateogory you would like to explore.</p>
-					<button type="submit" class="people" id="people">Characters</button>
-					<button type="submit" class="films" id="films">Films</button>
-					<button type="submit" class="planets" id="planets">Planets</button>
-					<button type="submit" class="species" id="species">Species</button>
-					<button type="submit" class="starships" id="starships">Starships</button>
-					<button type="submit" class="vehicles" id="vehicles">Vehicles</button>
+					<button type="submit" class="choice" id="people">Characters</button>
+					<button type="submit" class="choice" id="films">Films</button>
+					<button type="submit" class="choice" id="planets">Planets</button>
+					<button type="submit" class="choice" id="species">Species</button>
+					<button type="submit" class="choice" id="starships">Starships</button>
+					<button type="submit" class="choice" id="vehicles">Vehicles</button>
 
 					<div id="apiInfo"></div>
 					<div class="turn">
@@ -50,6 +56,6 @@
 		<!-- must be in this order to ensure older browser support with fetch  -->
 		<script src="promise.min.js"></script>
 		<script src="fetch.umd.js"></script>
-		<script src="api.js"></script>
+		<script src="fetch.js"></script>
 	</body>
 </html>
