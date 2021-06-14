@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Tori Locke" />
+		<meta name="keywords" content="JavaScript Projects" />
+		<meta name="description" content="Notes during Week nine (9) of WDD 330 BYU course" />
+		<!-- add css styling to site -->
+		<link rel="stylesheet" href="../styles.css" />
+		<script src="week9.js" defer></script>
+
+		<title>Week Nine Notes</title>
+	</head>
+
+	<body>
+		<div class="page-container">
+			<div class="content-wrapper">
+				<header>
+					<h1><a href="../">Tori Locke | WDD 330 Portfolio | Week-09</a></h1>
+				</header>
+				<main>
+					<section class="notes">
+						<h2>Summary Notes - Chapter Nine (9) The Window Object (14) HTML 5 API's</h2>
+						<h3>JavaScript: Novice to Ninja, 2nd Edition</h3>
+						<div class="mainContent">
+							<ul>
+								<li>It is a bad idea from a usability standpoint to resize or move a user’s window.</li>
+
+								<li>
+									The Screen object has more uses for mobile devices. It also allows you to do things
+									like turn off the device’s screen, detect a change in its orientation or lock it in
+									a specific orientation.
+								</li>
+								<li>
+									The availHeight and availWidth can be used to find the height and width of the
+									screen, excluding any operating system menus:
+								</li>
+								<li>
+									The use of document.write() is heavily frowned upon as it can only be realistically
+									used by mixing JavaScript within an HTML document. There are still some extremely
+									rare legitimate uses of it, but a ninja programmer will hardly ever need to use it.
+								</li>
+								<li>
+									A restriction of cookies is that they can only be read by a web page from the same
+									domain that set them. This is to stop sites being able to access information about
+									users, such as other sites they have visited. Cookies are also limited to storing up
+									to 4KB of data, although 20 cookies are allowed per domain, which can add up to
+									quite a lot of data.
+								</li>
+								<li>
+									Cookies use for data storage is starting to be replaced in many cases by the new
+									HTML5 localStorage API as it allows more data to be stored. This is covered in
+									Chapter 14. Cookies are still useful for retaining state information (such as if a
+									user is logged in) because they’re passed between the client and server on every
+									HTTP request.
+								</li>
+								<li>
+									Adding the string ; secure to the end of a cookie will ensure it’s only transmitted
+									over a secure HTTPS network:
+								</li>
+
+								<li>
+									It’s still best practice to use feature detection before using any of the API
+									methods.
+								</li>
+								<li>
+									Web workers allow computationally complex operations to be performed in a separate
+									thread, meaning that the flow of a program won’t suffer interruptions, and an
+									application will not freeze or hang.
+								</li>
+								<li>
+									Websocket is a new protocol that allows two-way communication with a server – also
+									known as push messaging. This means that a connection is kept open and responses are
+									‘pushed’ to the client as soon as they are received.
+								</li>
+								<li>
+									There are some security and privacy considerations to keep in mind when considering
+									some HTML5 APIs – especially those on the cutting edge that haven't been used 'in
+									the wild' for long. For example, there are concerns that the ambient light API
+									mightmake it possible to steal dataand the battery API has been dropped by Apple and
+									Mozilla due to concerns overuser profiling.
+								</li>
+							</ul>
+						</div>
+					</section>
+				</main>
+			</div>
+			<footer>
+				<small>Tori Locke | WDD 330 | Spring 2021</small>
+			</footer>
+		</div>
+	</body>
+</html>
