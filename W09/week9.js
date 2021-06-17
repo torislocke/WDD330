@@ -2,9 +2,8 @@
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach*/
 
 const projects = [
+	'<a href="./team/index.html">Team Project | Drum Kit</a>',
 	'<a href="./practice/animation/index.html">JavaScript Ninja | Animation </a>',
-
-	'<a href="../quiz/index.html">Ninja Game</a>',
 	'<a href="notesW09.html">Week Nine Notes</a>',
 ];
 

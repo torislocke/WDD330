@@ -86,10 +86,10 @@
 				if (e.propertyName !== 'transform') return; // only listens to transform
 				this.classList.remove('playing');
 			}
-
+			// transitionend event:  https://developer.mozilla.org/en-US/docs/Web/API/Document/transitionend_event
 			const keys = document.querySelectorAll('.key');
 			keys.forEach((key) => key.addEventListener('transitionend', removeTransition));
-
+			// function to count the number of times a key is pressed
 			function lowerKey(key) {
 				keyPos = parseInt(key.dataset.low);
 				if (keyPos < 100) {
