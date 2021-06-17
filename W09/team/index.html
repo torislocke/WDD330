@@ -58,28 +58,48 @@
 		<audio data-key="76" src="sounds/tink.wav"></audio>
 
 		<script>
-			// function to remove transition
-			function removeTransition(e) {
-				if (e.propertyName !== 'transform') return;
-				// e.target.classList.remove('playing');
-				this.classList.remove('playing');
-			}
-			// is there an element on the page that has an audio element that matches data-key
+			window.addEventListener(
+				'keydown',
+				function (e) {
+					if (e.repeat) return; //prevents repeat when hold keydown
+					playSound(e);
+				},
+				false
+			);
+
 			function playSound(e) {
 				const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-				// select the div to add styling
-				const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-				if (!audio) return; // stop the function if no audio
-				audio.currentTime = 0; // rewind to start for fast play
+				if (!audio) return; // stops function
+				addAnimation(e);
+				audio.currentTime = 0; // rewinds to start
+				// play() method starts audio file
 				audio.play();
-				key.classList.add('playing');
 			}
-			// loop through all elements to listen for transitionend
-			const keys = Array.from(document.querySelectorAll('.key'));
-			keys.forEach((key) => key.addEventListener('transitionend', removeTransition));
-			window.addEventListener('keydown', playSound);
 
-	
+			function addAnimation(e) {
+				const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+				key.classList.add('playing');
+				lowerKey(key);
+			}
+
+			function removeTransition(e) {
+				if (e.propertyName !== 'transform') return; // only listens to transform
+				this.classList.remove('playing');
+			}
+
+			const keys = document.querySelectorAll('.key');
+			keys.forEach((key) => key.addEventListener('transitionend', removeTransition));
+
+			function lowerKey(key) {
+				keyPos = parseInt(key.dataset.low);
+				if (keyPos < 100) {
+					keyPos += 10;
+				} else {
+					keyPos = 0;
+				}
+				key.dataset.low = `${keyPos}`;
+				key.style.marginTop = `${keyPos}px`;
+			}
 		</script>
 	</body>
 </html>
