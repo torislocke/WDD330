@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Tori Locke" />
+		<meta name="keywords" content="JavaScript Projects" />
+		<meta name="description" content="Notes during Week ten (10) of WDD 330 BYU course" />
+		<!-- add css styling to site -->
+		<link rel="stylesheet" href="../styles.css" />
+		<script src="week10.js" defer></script>
+
+		<title>Week Nine Notes</title>
+	</head>
+
+	<body>
+		<div class="page-container">
+			<div class="content-wrapper">
+				<header>
+					<h1><a href="../">Tori Locke | WDD 330 Portfolio | Week-10</a></h1>
+				</header>
+				<main>
+					<section class="notes">
+						<h2>Summary Notes</h2>
+					</br>
+						<h3>
+							MDS Web Docs |
+							<a
+								href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation"
+								target="_blank"
+							>
+								Form Validation</a
+							>
+						
+							<a
+								href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+								target="_blank"
+								>Using Fetch</a
+							>
+						</h3>
+						<div class="mainContent">
+							<ul>
+								<li>
+									Never trust data passed to your server from the client. Always validate on both
+									client and server side.
+								</li>
+
+								<li>
+									Regular expressions are patterns used to match character combinations in strings. In
+									JavaScript, regular expressions are also objects.
+									<a
+										href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions"
+										target="_blank"
+										>... more information</a
+									>
+								</li>
+								<li>
+									Most browsers support the
+									<a
+										href="https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation"
+										target="_blank"
+										>Constraint Validation API.
+									</a>
+								</li>
+								<li>
+									Constraint Validation API methods: checkValidity(): Returns true if the element's
+									value has no validity problems; false otherwise. If the element is invalid, this
+									method also fires an invalid event on the element. | setCustomValidity(message):
+									Adds a custom error message to the element; if you set a custom error message, the
+									element is considered to be invalid, and the specified error is displayed. This lets
+									you use JavaScript code to establish a validation failure other than those offered
+									by the standard HTML5 validation constraints. The message is shown to the user when
+									reporting the problem.
+								</li>
+								<li>
+									<a
+										href="https://www.smashingmagazine.com/2009/07/web-form-validation-best-practices-and-tutorials/"
+										target="_blank"
+										>SmashingMagazine: Web Form Validation: Best Practices and Tutorials</a
+									>
+								</li>
+								<li>
+									To use Fetch in unsupported browsers, there is a
+									<a href="https://github.com/github/fetch" target="_blank">Fetch Polyfill</a>
+									available that recreates the functionality for non-supporting browsers.
+								</li>
+								<li>
+									You may not append or set the Content-Length header on a guarded headers object for
+									a response. Similarly, inserting Set-Cookie into a response header is not allowed:
+									ServiceWorkers are not allowed to set cookies via synthesized responses.
+								</li>
+
+								<li>
+									The static method error() returns an error response. Similarly, redirect() returns a
+									response resulting in a redirect to a specified URL. These are also only relevant to
+									Service Workers.
+								</li>
+							</ul>
+						</div>
+					</section>
+				</main>
+			</div>
+			<footer>
+				<small>Tori Locke | WDD 330 | Spring 2021</small>
+			</footer>
+		</div>
+	</body>
+</html>

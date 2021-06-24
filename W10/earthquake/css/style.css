@@ -1,0 +1,58 @@
+h1 {
+	text-align: center;
+}
+
+p,
+div {
+	text-align: center;
+	margin-bottom: 25px;
+	margin-top: 35px;
+}
+ul {
+	margin: auto;
+	max-width: 500px;
+}
+li {
+	list-style: none;
+	padding: 10px;
+}
+
+fieldset {
+	margin: auto;
+	max-width: 550px;
+}
+legend {
+	margin-bottom: 25px;
+}
+
+input,
+select {
+	margin-bottom: 35px;
+	margin-left: 10px;
+	padding: 5px;
+}
+button {
+	padding: 10px;
+	background-color: black;
+	color: white;
+	border-radius: 5px;
+	transition: 0.3s;
+}
+button:hover {
+	transform: scale(1.1);
+	box-shadow: 5px 5px 5px rgb(49, 47, 47);
+}
+
+.detail {
+	margin: auto;
+	border: 1px solid black;
+	box-shadow: 5px 5px 5px rgb(49, 47, 47);
+	max-width: 450px;
+}
+.detail li {
+	list-style: square;
+	padding: 10px;
+}
+.hide {
+	display: none;
+}

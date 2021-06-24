@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="T S Locke" />
+		<meta
+			name="description"
+			content="WDD 330 Team Project to retrieve user geolocation data and map to Earthquake data "
+		/>
+		<title>Earthquake Program</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+
+	<body>
+		<main>
+			<h1>Quakes In Your Area</h1>
+			<fieldset>
+				<legend>Sort by Date of EarthQuake and Distance</legend>
+				<label
+					>Start Date:
+					<input type="date" id="startDate" value="2019-01-01" min="2010-01-01" max="2021-06-24" />
+				</label>
+				<br />
+				<label
+					>End Date: <input type="date" id="endDate" value="2021-06-24" min="2010-01-01" max="2021-06-24" />
+				</label>
+				<br />
+				<label>
+					Quakes Within
+					<select id="radius" name="radius">
+						<option value="200">200</option>
+						<option value="150">150</option>
+						<option value="100" selected>100</option>
+						<option value="50">50</option>
+						<option value="20">20</option>
+						<option value="10">10</option>
+						<option value="5">5</option>
+					</select>
+					km
+				</label>
+				<br />
+				<button id="customList" onClick="window.location.reload();">Custom Search</button>
+			</fieldset>
+			<p class="intro">Earth Quakes are Sorted by Most Recent</p>
+			<div class="title"></div>
+			<ul id="quakeList" class="quakelist"></ul>
+		</main>
+		<script src="js/script.js" type="module"></script>
+	</body>
+</html>

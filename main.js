@@ -8,6 +8,7 @@ const projects = [
 	'<a href="W07">Week 7</a>',
 	'<a href="W08">Week 8</a>',
 	'<a href="W09">Week 9</a>',
+	'<a href="W10">Week 10</a>',
 	'<a href="ExtraLearning">Extra Learning</a>',
 	'<a href="quiz">Building Ninja Quiz</a>',
 ];
