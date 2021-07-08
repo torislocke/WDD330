@@ -65,3 +65,10 @@ kbd {
 	letter-spacing: 0.1rem;
 	color: #ffc600;
 }
+
+.home {
+	text-decoration: none;
+	color: white;
+	background-color: green;
+	padding: 10px;
+}

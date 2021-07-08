@@ -10,6 +10,7 @@ const projects = [
 	'<a href="W09">Week 9 | Team Activity - Drum Soundboard</a>',
 	'<a href="W10">Week 10 | Team Activity - Earthquake API</a>',
 	'<a href="W11">Week 11 | Team Activity - Authentication JSON Web Token</a>',
+	'<a href="final/recipe/">Final Project | API Recipe Search</a>',
 	'<a href="ExtraLearning">Extra Learning</a>',
 	'<a href="quiz">Building Ninja Quiz</a>',
 ];

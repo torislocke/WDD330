@@ -65,3 +65,10 @@ select {
 .hide {
 	display: none;
 }
+
+.home {
+	text-decoration: none;
+	color: white;
+	background-color: green;
+	padding: 10px;
+}

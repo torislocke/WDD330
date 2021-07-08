@@ -3,7 +3,9 @@
 
 const projects = [
 	'<a href="piano/index.html">Drum Kit | Wes Bos</a>',
-	'<a href="imageGallery/">Image Gallery | Wes Bos</>',
+	'<a href="imageGallery/">Image Gallery | Wes Bos</a>',
+	'<a href="W03/practice/digitalClock.html">Digital Clock | Wes Bos</a>',
+	'<a href="practice/chuckNorris/">API Requests | JavaScript: Novice to Ninja, 2nd Edition</a>',
 ];
 
 const article = document.querySelector('article');
