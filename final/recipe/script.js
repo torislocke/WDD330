@@ -1,7 +1,7 @@
 const searchRecipe = document.querySelector('form');
 const searchResult = document.querySelector('.search-result');
 const container = document.querySelector('.container');
-const next = document.querySelector('.next');
+
 let searchQuery = '';
 const APP_ID = '37291b5c';
 const APP_key = '96f1f0aed7469f7ad09eca5551080ad4	';

@@ -1,8 +1,8 @@
 'use strict';
 // Fetch with promise
 // must use polyfill for older browser support
-const searchRecipe = document.querySelector('form');
-const searchResult = document.querySelector('.search-result');
+
+
 const container = document.querySelector('.container');
 
 const apiKey = '0KQzSZtWF3r8nyuP6lctdEMFxxB90GxKbNmFenot';
@@ -33,18 +33,20 @@ const fetchParks = async () => {
 		const res = await fetch(`${parksUrl}`);
 		if (!res.ok) {
 			throw new Error(res.status);
+			console.log(`This is the data ${data}`);
 		}
 		const data = await res.json();
 		const article = document.querySelector('.park');
 		let parks = [];
-		parks.forEach((item) => {
+		parks.forEach((data) => {
 			let listItem = document.createElement('li');
-			listItem.innerHTML = item;
+			listItem.innerHTML = data.fullName;
 			parkList.append(listItem);
+			console.log(`This is the data ${data}`);
 		});
 
 		article.append(parkList);
-		console.log(data);
+		console.log(parkList);
 	} catch (error) {
 		console.log(error);
 	}
